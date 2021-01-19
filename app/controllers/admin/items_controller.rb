@@ -10,6 +10,10 @@ class Admin::ItemsController < ApplicationController
     redirect_to admin_items_path
   end
   
+  def index
+    @items = Item.all
+  end
+  
   private
   
   def item_params
