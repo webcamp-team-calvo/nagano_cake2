@@ -1,9 +1,9 @@
 <h1>マイページ</h1>
 
 <h3>登録情報</h3>
-<%= link_to '編集する', edit_customers_path %>
+<%= link_to '編集する', edit_customers_path, class:'btn btn-success' %><br>
 
-<table bordercolor="#333333">
+<table>
   <tbody>
     <tr>
       <tb>氏名　</tb>
@@ -33,6 +33,6 @@
 </table>
 
 <h3>配送先</h3>
-<%= link_to '一覧を見る', deliveries_path %>
+<%= link_to '一覧を見る', deliveries_path, class:'btn btn-primary' %>
 <h3>注文履歴</h3>
-<%= link_to '一覧を見る', orders_path %>
+<%= link_to '一覧を見る', orders_path, class:'btn btn-primary' %>
