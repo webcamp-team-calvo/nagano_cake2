@@ -1,0 +1,8 @@
+<H2>商品一覧 (全<%= @items.count %>)</H2>
+
+<div class= "container">
+  <% @items.each do |item| %>
+    <%= attachment_image_tag item, :item_image, :fill, 50, 75, fallback: "no_image1.jpg", size:'50x75' %></td>
+    <%= item.name %><br>
+    <%= item.price %><br>
+</div>
