@@ -14,6 +14,17 @@ class Public::CustomersController < ApplicationController
     redirect_to customers_path
   end
   
+  def quit
+  
+  end
+  
+  def out
+    @customer = current_customer
+    @customer.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
+  end
+  
   private
   
   def customer_params
