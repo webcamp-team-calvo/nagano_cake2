@@ -3,7 +3,9 @@
 
 <div class= "container">
   <% @items.each do |item| %>
+    <%= link_to item_path(item) do %>
     <%= attachment_image_tag item, :item_image, :fill, 50, 75, fallback: "no_image1.jpg", size:'50x75' %></td>
+    <% end %>
     <%= item.name %><br>
     ￥<%= item.price %><br>
   <% end %>
