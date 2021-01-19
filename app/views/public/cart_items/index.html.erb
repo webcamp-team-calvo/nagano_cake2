@@ -1,1 +1,48 @@
-カート商品一覧
+<h2>ショッピングカート</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>商品名</td>
+      <td>単価(税込)</td>
+      <td>数量</td>
+      <td>小計</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <%= @cart_items.each do |cart_item| %>
+    <tr>
+      <td>
+        <%= attachment_image_tag cart_item, :item_image, :fill, 20, 35, fallback: "no_image1.jpg", size:'20x35' %>
+        <%= cart_item.name %>
+      </td>
+      <td><%= cart_item.price %></td>
+      <td>
+        <%= form_with url: cart_items_path, method: :patch, local: true do |f| %>
+          <%= f.select :amount, options_for_select({ "1" => "1", "2" => "2", "3" => "3", "4" =>"4", "5" => "5" }) %>
+          <%= f.submit '変更', class: 'btn btn-success' %>
+        <% end %>
+      </td>
+      <td>
+        掛け算？
+      </td>
+      <td>
+        <%= link_to '削除する', cart_item_path(cart_item), class: 'btn btn-danger', method: :delete %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table">
+  <tr>
+  <td>合計金額</td>
+  <td>足し算？？</td>
+  </tr>
+</table>
+
+<%= link_to '買い物を続ける', root_path, class: 'btn btn-primary' %>
+
+<%= link_to '情報入力に進む', new_order_path, class: 'btn btn-success' %>
+
