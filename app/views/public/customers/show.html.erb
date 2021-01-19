@@ -1,0 +1,38 @@
+<h1>マイページ</h1>
+
+<h3>登録情報</h3>
+<%= link_to '編集する', edit_customers_path %>
+
+<table bordercolor="#333333">
+  <tbody>
+    <tr>
+      <tb>氏名　</tb>
+      <tb><%= current_customer.last_name %>　<%= current_customer.first_name %></tb>
+    </tr><br>
+    <tr>
+      <tb>カナ　</tb>
+      <tb><%= current_customer.last_name_kana %>　<%= current_customer.first_name_kana %></tb>
+    </tr><br>
+    <tr>
+      <tb>郵便番号　</tb>
+      <tb><%= current_customer.postcode %></tb>
+    </tr><br>
+    <tr>
+      <tb>住所　</tb>
+      <tb><%= current_customer.address %></tb>
+    </tr><br>
+    <tr>
+      <tb>電話番号　</tb>
+      <tb><%= current_customer.phone_number %></tb>
+    </tr><br>
+    <tr>
+      <tb>メールアドレス　</tb>
+      <tb><%= current_customer.email %></tb>
+    </tr><br>
+  </tbody>
+</table>
+
+<h3>配送先</h3>
+<%= link_to '一覧を見る', deliveries_path %>
+<h3>注文履歴</h3>
+<%= link_to '一覧を見る', orders_path %>
