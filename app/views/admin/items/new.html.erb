@@ -1,6 +1,6 @@
 <h3>新規商品登録</h3>
 
-<%= form_with model: @item, local:true do |f| %>
+<%= form_with model: [:admin, @item], local:true do |f| %>
 
 <div class="field">
 <h4>商品画像</h4>
@@ -19,7 +19,7 @@
 
 <div class="field">
 <h4>ジャンル</h4>
-<%= f.select :model, options_for_select({"ケーキ" => "category", "プリン" => "category", "焼き菓子" => "category", "キャンディ"=>"category"}) %>
+<%= f.collection_select :category_id, Category.all, :id, :name, {promt: '洗濯してください'}, class: 'form-control' %>
 </div>
 
 <div class="field">
@@ -29,10 +29,10 @@
 
 <div class="field">
 <h4>販売ステータス</h4>
-<%= f.radio_button :status, :sale, checked: true %>
-<%= f.label :status, "販売中", {value: :sale} %>
-<%= f.radio_button :status, :stop %>
-<%= f.label :status, "販売停止中", {value: :stop} %>
+<%= f.radio_button :is_active, :販売中, checked: true %>
+<%= f.label :販売中 %>
+<%= f.radio_button :is_active, :販売停止中 %>
+<%= f.label :販売停止中 %>
 </div>
 
 <%= f.submit "新規登録" %>

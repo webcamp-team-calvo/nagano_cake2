@@ -1,26 +1,24 @@
-<h3>ジャンル一覧・追加</h3>
+<div class="bg-light">ジャンル一覧・追加</div>
 
-<%= form_with model: @category, local:true do |f| %>
+<%= form_with model: [:admin, @category], local:true do |f| %>
 
 <div class="field">
-<p>ジャンル名</p>
-<%= f.text_field :name %>
+<tr>ジャンル名   <%= f.text_field :name %><%= f.submit "新規登録" %></tr>
 </div>
-<%= f.submit "新規登録" %>
 <% end %>
 
-<thead>
+<table class="table">
+  <thead class="thead-light">
     <tr>
       <th>ジャンル</th>
     </tr>
   </thead>
   <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %>
-            <%= link_to "編集する", edit_admin_category_path(category) %>
-        </td>
-      </tr>
-    <% end %>
+    <tr>
+      <% @categories.each do |category| %>
+      <td><%= category.name %></td>
+      <td><%= link_to "編集する", edit_admin_category_path(category), class: "btn- btn-success" %></td>
+    </tr>
   </tbody>
 </table>
+<% end %>
