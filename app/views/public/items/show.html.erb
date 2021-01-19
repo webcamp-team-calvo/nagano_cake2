@@ -1,0 +1,10 @@
+商品詳細画面
+  <%= attachment_image_tag @item, :item_image, :fill, 100, 125, fallback: "no_image1.jpg", size:'100x125' %>
+  <h2><%= @item.name %></h2>
+  <p><%= @item.information %></p>
+  <h3>￥<%= @item.price %></h3>(税込)
+
+  <%= form_with url: cart_items_path, method: :get, local: true do |f| %>
+    <%= f.select :amount, options_for_select({ "1" => "1", "2" => "2", "3" => "3", "4" =>"4", "5" => "5" }) %>
+    <%= f.submit 'カートに入れる' %>
+  <% end %>
