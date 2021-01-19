@@ -19,7 +19,7 @@
 
 <div class="field">
 <h4>ジャンル</h4>
-<%= f.collection_select :category_id, Category.all, :id, :name, {promt: '洗濯してください'}, class: 'form-control' %>
+<%= f.collection_select :category_id, Category.all, :id, :name, {promt: '洗濯してください'} %>
 </div>
 
 <div class="field">
@@ -29,9 +29,9 @@
 
 <div class="field">
 <h4>販売ステータス</h4>
-<%= f.radio_button :is_active, :販売中, checked: true %>
+<%= f.radio_button :is_active, :true, checked: true %>
 <%= f.label :販売中 %>
-<%= f.radio_button :is_active, :販売停止中 %>
+<%= f.radio_button :is_active, :false %>
 <%= f.label :販売停止中 %>
 </div>
 

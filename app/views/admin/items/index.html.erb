@@ -1,5 +1,6 @@
 <h3>商品一覧</h3>
 
+<table>
 <thead>
     <tr>
       <th>商品ID</th>
@@ -14,12 +15,18 @@
       <tr>
         <td><%= item.id %></td>
         <td>
-          <%= link_to admin_items_path(item) do %>
+          <%= link_to admin_items_path(item.id) do %>
           <%= item.name %>
           <% end %></td>
         <td><%= item.price %></td>
         <td><%= item.category.name %></td>
-        <td><%= item.is_active %></td>
+        <td>
+          <% if item.is_active? %>
+          <p>販売中</p>
+          <% else %>
+          <p>販売停止中</p>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
