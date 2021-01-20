@@ -3,6 +3,6 @@ class CartItem < ApplicationRecord
   belongs_to :customer
 
   def sub_total_price
-    item.price * amount
+    (item.price * 1.1 * amount).round
   end
 end
