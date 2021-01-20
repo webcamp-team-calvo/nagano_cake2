@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-7">
+    <div class="col-10">
       <h4><%= @customer.last_name %><%= @customer.first_name %>さんの会員情報編集</h4>
 
       <div class="form mt-5">
         <%= form_with model:[:admin, @customer], local: true do |f| %>
         <div class="form-row">
-          <legend class="col-sm-4 col-form-label">会員ID</legend>
+          <legend class="col-sm-3 col-form-label">会員ID</legend>
           <div class="form-group col-sm-4">
             <%= @customer.id %>
           </div>
         </div>
         <div class="form-row">
-          <%= f.label :氏名, class:"col-sm-4 col-form-label" %>
+          <%= f.label :氏名, class:"col-sm-3 col-form-label" %>
 
           <div class="form-group col-sm-4">
             <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class:"form-control" %>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-row">
-          <%= f.label :フリガナ, class:"col-sm-4 col-form-label" %>
+          <%= f.label :フリガナ, class:"col-sm-3 col-form-label" %>
           <div class="form-group col-sm-4">
             <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", class:"form-control" %>
           </div>
@@ -34,35 +34,35 @@
         </div>
 
         <div class="form-row">
-          <%= f.label :"郵便番号", class:"col-sm-4 col-form-label" %>
+          <%= f.label :"郵便番号", class:"col-sm-3 col-form-label" %>
           <div class="form-group col-sm-4">
             <%= f.text_field :postcode, autofocus: true, autocomplete: "postcode", class:"form-control" %>
           </div>
         </div>
 
         <div class="form-row">
-          <%= f.label :住所, class:"col-sm-4 col-form-label" %>
-          <div class="form-group col-sm-8">
+          <%= f.label :住所, class:"col-sm-3 col-form-label" %>
+          <div class="form-group col-sm-9">
             <%= f.text_field :address, autofocus: true, autocomplete: "address", class:"form-control" %>
           </div>
         </div>
 
         <div class="form-row">
-          <%= f.label :"電話番号", class:"col-sm-4 col-form-label" %>
+          <%= f.label :"電話番号", class:"col-sm-3 col-form-label" %>
           <div class="form-group col-sm-4">
             <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", class:"form-control" %>
           </div>
         </div>
 
         <div class="form-row">
-          <%= f.label :メールアドレス, class:"col-sm-4 col-form-label" %>
+          <%= f.label :メールアドレス, class:"col-sm-3 col-form-label" %>
           <div class="form-group col-sm-4">
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control"  %>
           </div>
         </div>
 
         <div class="form-row">
-          <%= f.label :会員ステータス, class:"col-sm-4 col-form-label" %>
+          <%= f.label :会員ステータス, class:"col-sm-3 col-form-label" %>
           <div class="form-group col-sm-4">
             <%= f.radio_button :is_deleted, :false %>
             <%= f.label :is_deleted, '有効', class:'mr-3' %>
