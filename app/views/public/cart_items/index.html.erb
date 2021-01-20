@@ -28,7 +28,7 @@
         <% end %>
       </td>
       <td>
-        掛け算？
+        <%= cart_item.sub_total_price %>
       </td>
       <td>
         <%= link_to '削除する', cart_item_path(cart_item), class: 'btn btn-danger', method: :delete %>
