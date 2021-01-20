@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   devise_for :customers, skip: 'registrations', controllers: {
-    sessions: 'customers/sessions'
+    sessions: 'public/sessions'
   }
   devise_for :admins
-  
+
   devise_scope :customer do
-    get 'edit' => 'devise/registrations#edit'
-    get '/customers/sign_up' => 'devise/registrations#new', as: :new_customer_registration
-    post '/customers' => 'devise/registrations#create'
+    get 'edit' => 'public/registrations#edit'
+    get '/customers/sign_up' => 'public/registrations#new', as: :new_customer_registration
+    post '/customers' => 'public/registrations#create'
   end
-  
+
   namespace :admin do
     resources :customers, only: [:index, :show, :edit, :update]
     resources :items, only: [:index, :new, :create, :show, :edit, :update]
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :order_items, only: [:update]
     root to: 'homes#top'
   end
-  
+
   scope module: :public do
     resource :customers, only: [:show, :edit, :update]
     get '/customers/quit' => 'customers#quit'
@@ -33,6 +33,6 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get '/about' => 'homes#about'
   end
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
