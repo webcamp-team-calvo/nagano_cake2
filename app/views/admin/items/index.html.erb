@@ -1,9 +1,14 @@
 <div class='container'>
+<div style="position:absolute; top: 50px; right: 100px;">
+	 <%= link_to new_admin_item_path do %>
+		<div class="fas fa-plus fa-3x"></div>
+	 <% end %>
+	 </div>
   <div class='row'>
     <div class='col-lg-12'>
-     <h3>商品一覧</h3>
+     <h3 class="col-sm-2 bg-light text-center" >商品一覧</h3>
      <table class="table">
-      <tr>
+      <tr class="table-light">
         <th>商品ID</th>
         <th>商品名</th>
         <th>税抜価格</th>
