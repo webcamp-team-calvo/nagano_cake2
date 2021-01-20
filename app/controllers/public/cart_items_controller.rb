@@ -10,11 +10,10 @@ class Public::CartItemsController < ApplicationController
   end
 
   def update
-
+    @cart_item = CartItem.find(params[:id])
     @cart_item.update(cart_item_params)
     @cart_items = CartItem.all
-    # redirect_to request.refererにするとindexでのcreateが実行されアイテムが増えてしまった。
-    render 'index'
+    redirect_to cart_items_path
   end
 
   def create
@@ -28,8 +27,7 @@ class Public::CartItemsController < ApplicationController
     @cart_item = CartItem.find(params[:id])
     @cart_item.destroy
     @cart_items = CartItem.all
-    # redirect_to request.refererにするとindexでのcreateが実行されアイテムが増えてしまった。
-    render 'index'
+    redirect_to cart_items_path
   end
 
   def destroy_all
