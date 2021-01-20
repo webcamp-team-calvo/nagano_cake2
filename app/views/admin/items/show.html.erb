@@ -18,7 +18,7 @@
           <td><%= @item.name %></td>
   		    <td><%= @item.information %></td>
   		    <td><%= @item.category.name %></td>
-  		    <td><%= @item.price %></td>
+  		    <td><%= addTax(@item.price) %>(<%= @item.price %>)円</td>
   		    <td>
   		      <% if @item.is_active == true %>
   		       販売中
