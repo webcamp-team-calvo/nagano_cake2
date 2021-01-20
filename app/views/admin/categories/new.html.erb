@@ -1,24 +1,36 @@
-<div class="bg-light">ジャンル一覧・追加</div>
+<div class="container">
+  <div class="row">
+	<div class="col-lg-6">
 
-<%= form_with model: [:admin, @category], local:true do |f| %>
+    <h3 class="title-active">ジャンル一覧・追加</h3>
+    
+      <%= form_with model: [:admin, @category], local:true do |f| %>
+        <table class="table">
+          <tr>
+            <th>ジャンル名</th>
+            <th><%= f.text_field :name, :placeholder => "ジャンル名"%></th>
+            <th><%= f.submit "新規登録", class: "btn btn-success" %></th>
+          </tr>
+         </table>
+      <% end %>
 
-<div class="field">
-<tr>ジャンル名   <%= f.text_field :name %><%= f.submit "新規登録" %></tr>
+      <table class="table table-bordered", style="margin-right:2em" >
+       <thead>
+        <tr class="table-active">
+          <th>ジャンル</th>
+         </tr>
+       </thead>
+       <tbody>
+         <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.name %>
+                <%= link_to "編集する", edit_admin_category_path(category), class: "btn btn-success" %>
+            </td>
+          </tr>
+         <% end %>
+       </tbody>
+      </table>
+  </div>
+  </div>
 </div>
-<% end %>
 
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th>ジャンル</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <% @categories.each do |category| %>
-      <td><%= category.name %></td>
-      <td><%= link_to "編集する", edit_admin_category_path(category), class: "btn- btn-success" %></td>
-    </tr>
-  </tbody>
-</table>
-<% end %>
