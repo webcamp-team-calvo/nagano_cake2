@@ -20,7 +20,7 @@
       <td>
         <%= cart_item.item.name %>
       </td>
-      <td><%= cart_item.item.price %></td>
+      <td><%= addTax(cart_item.item.price) %></td>
       <td>
         <%= form_with model: cart_item, method: :patch, local: true do |f| %>
           <%= f.select :amount, options_for_select({ "1" => "1", "2" => "2", "3" => "3", "4" =>"4", "5" => "5" }, :selected => cart_item.amount) %>
