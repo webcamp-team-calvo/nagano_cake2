@@ -1,12 +1,7 @@
 class Public::CartItemsController < ApplicationController
 
   def index
-    #@item = Item.find(params[:item_id])
-    #@cart_item = CartItem.find_by(customer_id: current_customer.id, item_id: @item.id, amount: params[:amount])
-    #session[:cart_item] = @cart_item
-    #@cart_items = CartItem.all(session[:cart_item])
     @cart_items = CartItem.all
-            #binding.pry
   end
 
   def update

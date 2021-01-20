@@ -5,4 +5,5 @@ class CartItem < ApplicationRecord
   def sub_total_price
     (item.price * 1.1 * amount).round
   end
+
 end

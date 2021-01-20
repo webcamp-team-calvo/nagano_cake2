@@ -15,6 +15,7 @@
     </tr>
   </thead>
   <tbody>
+    <% @sum = 0 %>
     <% @cart_items.each do |cart_item| %>
     <tr>
       <td>
@@ -34,6 +35,7 @@
         <%= link_to '削除する', cart_item_path(cart_item), class: 'btn btn-danger', method: :delete %>
       </td>
     </tr>
+    <% @sum += cart_item.sub_total_price %>
     <% end %>
   </tbody>
 </table>
@@ -41,7 +43,7 @@
 <table class="table">
   <tr>
   <td>合計金額</td>
-  <td>足し算？？</td>
+  <td><%= @sum %></td>
   </tr>
 </table>
 
