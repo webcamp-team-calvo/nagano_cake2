@@ -1,6 +1,6 @@
-<h4 class="col-sm-2 bg-light text-center">商品編集</h4>
+<h4 class="col-sm-2 bg-light text-center mt-5">商品編集</h4>
 　 <%= form_with model: [:admin, @item], local:true do |f| %>
-　    
+
 　    <div class="field">
         <label class="col-sm-2">画像投稿</label>
           <%= f.attachment_field :image %>
