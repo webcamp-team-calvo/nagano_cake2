@@ -11,14 +11,14 @@
     </tr>
   </thead>
   <tbody>
-    <%= @cart_items.each do |cart_item| %>
+    <% @cart_items.each do |cart_item| %>
     <tr>
       <td>
         <%= cart_item.item.name %>
       </td>
       <td><%= cart_item.item.price %></td>
       <td>
-        <%= form_with url: cart_items_path, method: :patch, local: true do |f| %>
+        <%= form_with model:cart_item, method: :patch, local: true do |f| %>
           <%= f.select :amount, options_for_select({ "1" => "1", "2" => "2", "3" => "3", "4" =>"4", "5" => "5" }, :selected => cart_item.amount) %>
           <%= f.submit '変更', class: 'btn btn-success' %>
         <% end %>
