@@ -1,5 +1,9 @@
 <h2>ショッピングカート</h2>
 
+<div class="container">
+  <%= link_to 'カートを空にする', cart_items_destroy_all_path, class: 'btn btn-danger', method: :delete %>
+</div>
+
 <table class="table">
   <thead>
     <tr>
