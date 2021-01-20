@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      
+      <h3 class="mb-3">マイページ</h3>
+      
+      <div class="flex">
+        <p>登録情報</p>
+        <span><%= link_to '編集する', edit_customers_path, class:'btn btn-success btn-sm' %></span>
+      </div>
+      
+      <!--会員登録情報ここから-->
+      <table class="table table-sm">
+        <tbody>
+          <tr>
+            <td class="table-secondary">氏名</td>
+            <td><%= current_customer.last_name %>　<%= current_customer.first_name %></td>
+          </tr>
+          <tr>
+            <td class="table-secondary">カナ</td>
+            <td><%= current_customer.last_name_kana %>　<%= current_customer.first_name_kana %></td>
+          </tr>
+          <tr>
+            <td class="table-secondary">郵便番号</td>
+            <td><%= current_customer.postcode %></td>
+          </tr>
+          <tr>
+            <td class="table-secondary">住所</td>
+            <td><%= current_customer.address %></td>
+          </tr>
+          <tr>
+            <td class="table-secondary">電話番号</td>
+            <td><%= current_customer.phone_number %></td>
+          </tr>
+          <tr>
+            <td class="table-secondary">メールアドレス</td>
+            <td><%= current_customer.email %></td>
+          </tr>
+        </tbody>
+      </table>
+      <!--会員登録情報ここまで-->
+      
+      <div class="flex">
+        <p>配送先</p>
+        <span><%= link_to '一覧を見る', deliveries_path, class:'btn btn-primary btn-sm' %></span>
+      </div>
+      
+      <div class="flex">
+        <p>注文履歴</p>
+        <span><%= link_to '一覧を見る', orders_path, class:'btn btn-primary btn-sm' %></span>
+      </div>
+      
+    </div>
+  </div>
+</div>
