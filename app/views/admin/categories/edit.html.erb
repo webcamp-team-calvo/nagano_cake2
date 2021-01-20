@@ -6,6 +6,7 @@
       <%= form_with model: [:admin, @category], local:true do |f| %>
         <table class="table">
           <tr>
+            <th><%= attachment_image_tag(@item, :image, :fill, 100, 100, fallback: "no-image-icon.jpg") %></th>
            <th>ジャンル名</th>
            <th><%= f.text_field :name %></th>
            <th><%= f.submit "変更を保存", class: "btn btn-success"%></th>
