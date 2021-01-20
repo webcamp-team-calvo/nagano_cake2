@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= @cart_items.each do |cart_item| %>
+    <%= @cart_items..each do |cart_item| %>
     <tr>
       <td>
         <%= attachment_image_tag cart_item, :item_image, :fill, 20, 35, fallback: "no_image1.jpg", size:'20x35' %>

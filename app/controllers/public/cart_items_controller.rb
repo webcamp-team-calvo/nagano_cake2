@@ -1,6 +1,8 @@
 class Public::CartItemsController < ApplicationController
 
   def index
+    #binding.pry
+
   end
 
   def update
