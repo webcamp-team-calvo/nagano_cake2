@@ -11,13 +11,12 @@
     </tr>
   </thead>
   <tbody>
-    <%= @cart_items..each do |cart_item| %>
+    <%= @cart_items.each do |cart_item| %>
     <tr>
       <td>
-        <%= attachment_image_tag cart_item, :item_image, :fill, 20, 35, fallback: "no_image1.jpg", size:'20x35' %>
-        <%= cart_item.name %>
+        <%= cart_item.item.name %>
       </td>
-      <td><%= cart_item.price %></td>
+      <td><%= cart_item.item.price %></td>
       <td>
         <%= form_with url: cart_items_path, method: :patch, local: true do |f| %>
           <%= f.select :amount, options_for_select({ "1" => "1", "2" => "2", "3" => "3", "4" =>"4", "5" => "5" }) %>
