@@ -1,0 +1,11 @@
+<div class="container">
+  <h5>注文情報入力</h5>
+
+  <%= form_with model:@order, method: :post, local: true do |f| %>
+    <label class="col-sm-2 control-label">支払方法</label><br>
+      <%= f.radio_button :payment_method, :クレジットカード, checked: true %>
+      <%= f.label :クレジットカード %>
+      <%= f.radio_button :payment_method, :銀行振込 %>
+      <%= f.label :銀行振込 %>
+  <% end %>
+</div>
