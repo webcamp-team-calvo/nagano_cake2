@@ -2,7 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.destroy_all_btn {
-  display: inline-block;
-  margin: 0 auto;
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
 }
