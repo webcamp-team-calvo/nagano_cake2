@@ -2,10 +2,13 @@ class Public::OrdersController < ApplicationController
   
   def new
     @order = Order.new
+    @deliveries = Delivery.all
   end
   
   def confirm
-    
+    @cart_items = CartItem.where(customer_id: current_customer.id)
+    @postage = 800
+    @order = Order.new
   end
   
   def cretae
