@@ -6,17 +6,6 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
-  helper_method :current_cart
-
-  def current_cart
-    if session[:customer_id]
-      @customer = Customer.find(session[:customer_id])
-    else
-      @cart_item = CartItem.create
-      session[:customer_id]
-    end
-  end
-
   protected
 
   def configure_permitted_parameters
