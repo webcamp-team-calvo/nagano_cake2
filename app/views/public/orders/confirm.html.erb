@@ -1,0 +1,43 @@
+<div class="container">
+  <h5>注文情報確認</h5>
+  <table class="table table-bordered">
+    <thead>
+      <th>商品名</th>
+      <th>単価(税込)</th>
+      <th>数量</th>
+      <th>小計</th>
+    </thead>
+    <tbody>
+      <% @sum = 0 %>
+      <% @cart_items.each do |cart_item| %>
+      <tr>
+        <td>
+          <%= attachment_image_tag cart_item.item, :image, format: 'jpeg', size: "75x50" %>
+          <%= cart_item.item.name %>
+        </td>
+        <td><%= addTax(cart_item.item.price).to_s(:delimited) %></td>
+        <td><%= cart_item.amount %></td>
+        <td>
+          <%= cart_item.sub_total_price.to_s(:delimited) %>
+        </td>
+    </tr>
+    <% @sum += cart_item.sub_total_price %>
+    <% end %>
+  </tbody>
+  </table>
+  <table class="table table-bordered">
+    <tr>
+      <th>送料</th>
+      <td>800</td>
+    </tr>
+    <tr>
+      <th>商品合計</th>
+      <td><%= @sum %></td>
+    </tr>
+    <tr>
+      <th>請求金額</th>
+      <td><%= @sum + 800 %></td>
+    </tr>
+  </table>
+
+</div>
