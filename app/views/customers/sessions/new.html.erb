@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="row">
+  <div class="row mt-5">
     <div class="col-10">
-      <h2>ログイン</h2>
+      <h2 class="bg-light text-center" style="width: 200px">ログイン</h2>
 
-      <div class="signin mt-5">
-        <h5 class="mb-4">会員の方はこちらからログイン</h5>
+      <div class="signin mt-5 mx-auto">
+        <h5 class="bg-light text-center mb-4" style="width: 300px">会員の方はこちらからログイン</h5>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group row">
             <%= f.label :メールアドレス, class:"col-3 col-form-label" %>
@@ -29,8 +29,8 @@
         <% end %>
       </div>
 
-      <div class="tosignup mt-5">
-        <h5 class="mb-4">会員登録がお済みでない方</h5>
+      <div class="tosignup mt-5 mb-4">
+        <h5 class="bg-light text-center" style="width: 300px">会員登録がお済みでない方</h5>
         <%= render "customers/shared/links" %>
       </div>
 

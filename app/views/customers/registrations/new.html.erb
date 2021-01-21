@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row">
+  <div class="row mt-5">
     <div class="col-10">
-      <h2>新規会員登録</h2>
+      <h5 class="bg-light text-center" style="width: 150px">新規会員登録</h5>
 
       <div class="signup mt-5">
         <%= form_for(resource, as: resource_name, url: customers_path) do |f| %>
@@ -83,7 +83,7 @@
       </div>
 
       <div class="to-signin mt-4">
-        <h2 class="mb-3">既に登録済みの方</h2>
+        <h5 class="bg-light text-center" style="width: 200px">既に登録済みの方</h5>
         <%= render "customers/shared/links" %>
       </div>
     </div>

@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-10">
-      <h2>管理者ログイン</h2>
+      <h2 class="bg-light text-center" style="width: 250px">管理者ログイン</h2>
       <div class="signin mt-5"></div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group row">
       <%= f.label :メールアドレス, class:"col-3 col-form-label" %>
       <div class="col-5">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class:"form-control" %>
       </div>
     </div>
 
