@@ -16,6 +16,14 @@ class Public::OrdersController < ApplicationController
     @order.customer_id = current_customer.id
     @order.save
     #binding.pry
+    current_customer.cart_items.each do |cart_item|
+      @order_item = @order.order_items.build
+      @order_item.item_id = cart_item.item_id
+      @order_item.amount = cart_item.amount
+      @order_item.price = cart_item.item.price * 1.1
+      @order_item.save
+    end
+    current_customer.cart_items.destroy_all
     redirect_to orders_thanks_path
   end
 
