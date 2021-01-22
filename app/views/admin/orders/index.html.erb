@@ -1,0 +1,41 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-lg-12'>
+     <h3 class="col-sm-2 bg-light text-center mt-5" >商品一覧</h3>
+     <table class="table">
+      <tr class="table-light">
+        <th>購入日時</th>
+        <th>購入者</th>
+        <th>注文個数</th>
+        <th>ステータス</th>
+      </tr>
+        <% @orders.each do |order| %>
+      <tr>
+        <td>
+          <%= link_to admin_order_path(order) do %>
+          <%= order.created_at %>
+          <% end %>
+        </td>
+        <td><%= order.customer.last_name %> <%= order.customer.first_name %></td>
+        <td><% order.order_items.each do |order_item| %>
+         <%= order_item.amount %>
+        <% end %>
+        <td>
+          <% if order.status == 0 %>
+          <p>入金待ち</p>
+          <% elsif order.status == 1 %>
+          <p>入金確認</p>
+          <% elsif order.status == 2 %>
+          <p>制作中</p>
+          <% elsif order.status == 3 %>
+          <p>発送準備中</p>
+          <% else %>
+          <p>発送済み</p>
+          <% end %>
+        </td>
+      </tr>
+       <% end %>
+     </table>
+   </div>
+  </div>
+</div>
