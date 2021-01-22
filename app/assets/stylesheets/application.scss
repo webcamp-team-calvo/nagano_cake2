@@ -16,3 +16,35 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+ 
+    #title{
+      text-align: center;
+      font-size: 50px;
+      margin-top: 30px;
+      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4)
+   }
+
+   .welcome-message {
+      width: 100%;
+      font-size: 25px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pickup-item {
+      margin-left: 50px;
+      height: auto;
+    }
+
+    .item-box {
+      float: left;
+      padding: 10px;
+      margin: 15px;
+      background-color: white;
+      border: 1px solid silver;
+    }
+
+    #welcome-text {
+      text-align: center;
+      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4)
+    }
