@@ -6,9 +6,9 @@ class Delivery < ApplicationRecord
 	  validates :name
 	  validates :address
 	end
-	
-	def total_address
-    postcode + address + name
-    end
-	
+
+  def  total_address
+  	postcode + "" + address + "" + name
+  end
+
 end
