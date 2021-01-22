@@ -9,6 +9,6 @@ class Delivery < ApplicationRecord
 	
 	def total_address
     postcode + address + name
-  end
+    end
 	
 end
