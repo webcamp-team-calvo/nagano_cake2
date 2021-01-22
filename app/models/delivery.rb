@@ -6,5 +6,9 @@ class Delivery < ApplicationRecord
 	  validates :name
 	  validates :address
 	end
+	
+	def view_all
+    '〒' + self.postcode + " " + self.address + "　" + self.name
+  end
 
 end
