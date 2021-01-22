@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+   <div class="col-xs-8">
+
+      <div class="welcome-message", style="margin-top :50px;">
+        <p id="welcome-text">ようこそ、NaganoCakeへ!<br>
+        このサイトは、ケーキ販売のECサイトになります。<br>
+        会員でない方も商品の閲覧はできますが、<br>
+        購入には会員登録が必要になります。</p>
+      </div>
+
+      <div class="pickup-item">
+        <h3>新着商品</h3>
+        <div>
+          <% @item.each.with_index(1) do |item| %>
+            <div class="item-box">
+              <div>
+                <%= link_to item_path(item) do %>
+                <%= attachment_image_tag item, :image, :fill, 200, 150, fallback: "noimage.jpg" %>
+                <% end %>
+              </div>
+              <h4><%= item.name %></h4>
+              <p>¥<%= (item.price * 1.1).round %>(税込)</p>
+            </div>
+          <% end %>
+        </div>
+        <%= link_to "全ての商品を見る", items_path %>
+      </div>
+    </div>
+  </div>
+</div>
