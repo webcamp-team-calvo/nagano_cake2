@@ -1,16 +1,17 @@
 <div class="container">
   <h5>注文情報入力</h5>
 
-  <%= form_with url: orders_confirm_path, method: :post, local: true do |f| %>
+  <%= form_with url: orders_path, method: :post, local: true do |f| %>
     <label class="col-sm-2 control-label">支払方法</label><br>
-      <%= f.radio_button :payment_method, :クレジットカード, checked: true %>
+      <%= f.radio_button :payment_method, 0, checked: true %>
       <%= f.label :クレジットカード %>
-      <%= f.radio_button :payment_method, :銀行振込 %>
+      <%= f.radio_button :payment_method, 1 %>
       <%= f.label :銀行振込 %>
     <div>
     <label class="col-sm-2 control-label">お届け先</label><br>
       <div>
         <%= f.radio_button :address, current_customer.address, checked: true %>
+        <%= f.hidden_field :customer_id, :value => current_customer.id %>
         <%= f.hidden_field :postcode, :value => current_customer.postcode %>
         <%= f.hidden_field :last_name, :value => current_customer.last_name %>
         <%= f.hidden_field :first_name, :value => current_customer.first_name %>
@@ -20,8 +21,9 @@
         <%= current_customer.last_name %><%= current_customer.first_name %>
       </div>
       <div>
-        <%#= f.radio_button :address, current_customer.deliveries.address, checked: true %>
+        <%= f.radio_button :address, current_customer.address, checked: true %>
         <%= f.label :登録済み住所から選択 %><br>
+        <%= f.collection_select :address, Delivery.all, :id, :view_all, {prompt: '選択してください'} %>
       </div>
       <div>
         <%= f.radio_button :address, current_customer.address %>
