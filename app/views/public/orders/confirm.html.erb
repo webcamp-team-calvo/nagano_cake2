@@ -69,6 +69,7 @@
 			<%= @order.address %>
 		</div>
 
+    <%= f.hidden_field :total_payment, :value => @sum + @order.postage %>
 		<%= f.hidden_field :payment_method, :value => @order.payment_method %>
 		<%= f.hidden_field :postcode, :value => @order.postcode %>
 		<%= f.hidden_field :name, :value => @order.name %>

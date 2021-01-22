@@ -1,4 +1,3 @@
-
 <div class="container">
 	<div class="row">
         <div class="col-md-8">
@@ -37,7 +36,7 @@
 				<%= f.radio_button :select_address, :deliverey_address %>
 				<%= f.label :select_address, "登録済住所から選択", value: :deliverey_address %>
 				<div>
-					<%= collection_select(:select_delivery, :id, current_customer.deliveries, :id, :address) %>
+					<%= collection_select(:select_delivery, :id, current_customer.deliveries, :id, :total_address ) %>
 				</div>
 			</div>
 
@@ -58,7 +57,7 @@
 
 					<div>
 						<%= f.label :new_name, "宛名　　　　　　　　　　" %>
-						<%= f.text_field :new_name, autofocus: true, :placeholder => "山田太郎" %>
+						<%= f.text_field :new_name, autofocus: true, :placeholder => "令和道子" %>
 					</div>
 				</div>
 			</div>
