@@ -4,24 +4,16 @@
 			<div>
 				<h4>注文情報入力</h4>
 			</div>
-<<<<<<< HEAD
-			<%= form_with(model: @order, local: true, url: {action: 'confirm'}) do |f| %>
-			<h3>支払方法</h3>
-=======
 
 			<%= form_with(model: @order, local: true, url: {action: 'confirm'}) do |f| %>
 
 			<h3>支払方法</h3>
 
->>>>>>> origin/develop
 			<div>
 				<%= f.radio_button :payment_method, :"0", checked: true %>
 				<%= f.label :payment_method, "クレジットカード", value: :クレジットカード %>
 			</div>
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/develop
 			<div>
 				<%= f.radio_button :payment_method, :"1" %>
 				<%= f.label :payment_method, "銀行振込", value: :銀行振込 %>
