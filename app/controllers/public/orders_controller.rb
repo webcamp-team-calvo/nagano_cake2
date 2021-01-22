@@ -9,7 +9,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def create
-    #binding.pry
+    binding.pry
     @order = Order.new(order_params)
     #binding.pry
     @order.save
