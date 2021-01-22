@@ -12,8 +12,8 @@
 
   <div class="form-group">
     <label class="control-label">お届け先</label>
-    <%= f.radio_button_tag("choice1", "") %>
-    <%= f.label_tag("", "ご自身の住所") %>
+    <%= radio_button_tag("c1", "user_address") %>
+    <%= label_tag("c1_user_address", "ご自身の住所") %>
     <%= current_customer.postcode %>
     <%= current_customer.address %>
     <%= current_customer.last_name %>
@@ -21,14 +21,14 @@
   </div>
 
   <div class="form-group">
-    <%= f.radio_button_tag("choice1", "") %>
-    <%= f.label_tag("", "登録した住所")%>
+    <%= radio_button_tag("c1", "delivery_address") %>
+    <%= label_tag("c1_address", "登録した住所")%>
     <%= f.collection_select :delivery_id, @deliveries, :id, :total_address %>
   </div>
 
   <div class="form-group">
-    <%= f.radio_button_tag("choice1", "") %>
-    <%= f.label_tag("", "新しい住所") %>
+    <%= radio_button_tag("c1", "new_address") %>
+    <%= label_tag("c1_address", "新しい住所") %>
     <%= f.text_field :postcode, :placeholder => "0000000" %>
     <%= f.text_field :address, :placeholder => "東京都渋谷区代々木神園町0-0" %>
     <%= f.text_field :name, :placeholder => "令和道子" %>
@@ -38,4 +38,3 @@
     <%= f.submit "確認画面へ進む", class:"btn btn-primary" %>
   </div>
   <% end %>
-  

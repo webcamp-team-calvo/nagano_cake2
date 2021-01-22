@@ -32,7 +32,7 @@
   <thead>
    <tr>
      <th>送料</th>
-     <td><%= @postage.to_s(:delimited) %></td>
+     <td><%= @order.postage.to_s(:delimited) %></td>
   </tr>
   <tr>
      <th>商品合計</th>
@@ -43,9 +43,14 @@
      <td><%= (@sum + @postage).to_s(:delimited) %></td>
   </tr>
   
-  <% if payment_method? %>
-    <p class="text-success">クレジットカード</p>
-  <% else %>
-    <p class="text-secondary">銀行振り込み</p>
-  <% end %>
-  
+  <h4>支払方法</h4>
+  　<% if @order.payment_method == 0 %>
+  		<p>クレジットカード</p>
+  　<% else %>
+  		<p>銀行振り込み</p>
+  　<% end %>
+
+　<h3>お届け先</h3>
+　<%= @order.postcode %>
+　<%= @order.address %>
+　<%= @order.name %>
