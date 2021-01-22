@@ -1,8 +1,11 @@
 class Public::OrdersController < ApplicationController
 
+<<<<<<< HEAD
   def show
   end
 
+=======
+>>>>>>> origin/develop
   def new
     @customer = current_customer
     @order = Order.new
@@ -15,14 +18,14 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
     @order.save
-    #binding.pry
-    current_customer.cart_items.each do |cart_item|
-      @order_item = @order.order_items.build
-      @order_item.item_id = cart_item.item_id
-      @order_item.amount = cart_item.amount
-      @order_item.price = cart_item.item.price * 1.1
-      @order_item.save
-    end
+      current_customer.cart_items.each do |cart_item|
+        @order_item = @order.order_items.new
+        @order_item.order_id = @order.id
+        @order_item.item_id = cart_item.item_id
+        @order_item.amount = cart_item.amount
+        @order_item.price = cart_item.item.price * 1.1
+        @order_item.save
+      end
     current_customer.cart_items.destroy_all
     redirect_to orders_thanks_path
   end
@@ -41,32 +44,34 @@ class Public::OrdersController < ApplicationController
       @order.name = @customer.last_name + @customer.first_name
     # 登録済住所
     elsif params[:order][:select_address] == "deliverey_address"
-      @address = Delivery.find(params[:select_delivery][:id])
-      @order.postcode = @address.postcode
-      @order.address = @address.address
-      @order.name = @address.name
+      @delivery = Delivery.find(params[:select_delivery][:id])
+      @order.postcode = @delivery.postcode
+      @order.address = @delivery.address
+      @order.name = @delivery.name
     # 新しいお届け先
     elsif params[:order][:select_address] == "new_deliverey_address"
-      @address = Delivery.new
-      @address.postcode = params[:order][:new_postcode]
-      @address.address = params[:order][:new_address]
-      @address.name = params[:order][:new_name]
-      @address.customer_id = current_customer.id
-      if @address.save
-        @order.postcode = @address.postcode
-        @order.address = @address.address
-        @order.name = @address.name
+      @delivery = Delivery.new
+      @delivery.postcode = params[:order][:new_postcode]
+      @delivery.address = params[:order][:new_address]
+      @delivery.name = params[:order][:new_name]
+      @delivery.customer_id = current_customer.id
+      if @delivery.save
+        @order.postcode = @delivery.postcode
+        @order.address = @delivery.address
+        @order.name = @delivery.name
       else
         render "new"
       end
     end
   end
 
-  private
+  def show
+  end
 
+  private
   def order_params
     params.require(:order).permit(:customer_id, :name, :total_payment, :payment_method,
-     :postcode, :postage, :address, :status, order_items_attributes:
-      [:order_id, :item_id, :amount, :price, :making_status])
+     :postcode, :postage, :address, :status)
   end
+
 end

@@ -3,7 +3,9 @@
 		<div class="title-box">
 			<h4 class="Menu">注文情報詳細</h4>
 		</div>
+
 		<%= form_with :model => @order, url:orders_path, method: :post, local: true  do |f| %>
+
 		<div class="col-xs-8">
 			<table class="table table-bordered">
 				<thead>
@@ -20,6 +22,7 @@
 					<% @customer.cart_items.includes([:item]).each do |cart_item| %>
 						<tr>
 							<td><%= attachment_image_tag cart_item.item, :image, size: "50x50", format: 'jpeg', fallback: "no-data.jpg", size: "50x50" %> <%= cart_item.item.name %></td>
+
 							<td><%= cart_item.item.price.to_s(:delimited) %>円</td>
 							<td><%= cart_item.amount %></td>
 							<td><%= (@subtotal = cart_item.item.price * cart_item.amount).to_s(:delimited) %>円</td>
@@ -29,6 +32,7 @@
 				</tbody>
 			</table>
 		</div>
+
 		<!-- 請求金額 -->
 		<div class="col-xs-4">
 			<table class="table table-bordered">
@@ -46,6 +50,7 @@
 				</tr>
 			</table>
 		</div>
+
 		<!-- 支払方法 -->
 		<div class="col-xs-12">
 		<h3>支払方法</h3>
@@ -55,6 +60,7 @@
     <p>銀行振り込み</p>
     <% end %>
 		</div>
+
 		<!-- お届け先 -->
 		<div class="col-xs-12">
 			<h3>お届け先</h3>
@@ -62,14 +68,19 @@
 			<%= @order.name %>
 			<%= @order.address %>
 		</div>
-		<%= f.hidden_field :total_payment, :value => @sum + @order.postage %>
+
+    <%= f.hidden_field :total_payment, :value => @sum + @order.postage %>
 		<%= f.hidden_field :payment_method, :value => @order.payment_method %>
 		<%= f.hidden_field :postcode, :value => @order.postcode %>
 		<%= f.hidden_field :name, :value => @order.name %>
 		<%= f.hidden_field :address, :value => @order.address %>
 		<%= f.hidden_field :postage, :value => @order.postage %>
+
+
 		<%= f.submit "注文を確定する", class: "btn btn-success col-xs-2 col-xs-offset-5" %>
-		<div class= "footer-margen col-xs-12"></div>
+
+		<div class="footer-margen col-xs-12"></div>
+
 		<% end %>
 	</div>
 </div>
