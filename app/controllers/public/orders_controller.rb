@@ -5,13 +5,14 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
+    @order = Order.new(order_params)
+        binding.pry
     @cart_items = CartItem.where(customer_id: current_customer.id)
   end
 
   def create
-    binding.pry
-    @order = Order.new(order_params)
     #binding.pry
+    @order = Order.new(order_params)
     @order.save
     redirect_to orders_confirm_path
   end

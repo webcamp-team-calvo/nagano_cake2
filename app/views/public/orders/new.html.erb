@@ -10,23 +10,21 @@
     <div>
     <label class="col-sm-2 control-label">お届け先</label><br>
       <div>
-        <%= f.radio_button :address, current_customer.address, checked: true %>
+        <%= f.radio_button :address, :address1, checked: true %>
+        <!-- customer_idがわかれば、会員登録住所データは引っ張ってこれる-->
         <%= f.hidden_field :customer_id, :value => current_customer.id %>
-        <%= f.hidden_field :postcode, :value => current_customer.postcode %>
-        <%= f.hidden_field :last_name, :value => current_customer.last_name %>
-        <%= f.hidden_field :first_name, :value => current_customer.first_name %>
         <%= f.label :ご自身の住所 %><br>
         〒<%= current_customer.postcode %>
         <%= current_customer.address %><br>
         <%= current_customer.last_name %><%= current_customer.first_name %>
       </div>
       <div>
-        <%= f.radio_button :address, current_customer.address, checked: true %>
+        <%= f.radio_button :address, :address2 %>
         <%= f.label :登録済み住所から選択 %><br>
-        <%= f.collection_select :address, current_customer.deliveries.all, :id, :view_all, {prompt: '選択してください'} %>
+        <%#= f.collection_select :address, current_customer.deliveries.all, :id, :view_all, {prompt: '選択してください'} %>
       </div>
       <div>
-        <%= f.radio_button :address, current_customer.address %>
+        <%= f.radio_button :address, :address3 %>
         <%= f.label :新しいお届け先 %><br>
         <%= f.label :郵便番号, "郵便番号(ハイフンなし)"%>
       	<%= f.text_field :postcode, :placeholder => "半角数字,ハイフン無し" %><br>
