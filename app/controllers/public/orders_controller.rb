@@ -38,21 +38,21 @@ class Public::OrdersController < ApplicationController
       @order.name = @customer.last_name + @customer.first_name
     # 登録済住所
     elsif params[:order][:select_address] == "deliverey_address"
-      @address = Delivery.find(params[:select_delivery][:id])
-      @order.postcode = @address.postcode
-      @order.address = @address.address
-      @order.name = @address.name
+      @delivery = Delivery.find(params[:select_delivery][:id])
+      @order.postcode = @delivery.postcode
+      @order.address = @delivery.address
+      @order.name = @delivery.name
     # 新しいお届け先
     elsif params[:order][:select_address] == "new_deliverey_address"
-      @address = Delivery.new
-      @address.postcode = params[:order][:new_postcode]
-      @address.address = params[:order][:new_address]
-      @address.name = params[:order][:new_name]
-      @address.customer_id = current_customer.id
-      if @address.save
-        @order.postcode = @address.postcode
-        @order.address = @address.address
-        @order.name = @address.name
+      @delivery = Delivery.new
+      @delivery.postcode = params[:order][:new_postcode]
+      @delivery.address = params[:order][:new_address]
+      @delivery.name = params[:order][:new_name]
+      @delivery.customer_id = current_customer.id
+      if @delivery.save
+        @order.postcode = @delivery.postcode
+        @order.address = @delivery.address
+        @order.name = @delivery.name
       else
         render "new"
       end
