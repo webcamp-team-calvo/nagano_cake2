@@ -12,6 +12,11 @@ class Public::OrdersController < ApplicationController
   end
 
   def create
+    @order = Order.new(order_params)
+    @order.customer_id = current_customer.id
+    @order.save
+    #binding.pry
+    redirect_to orders_thanks_path
   end
 
   def index
