@@ -1,5 +1,6 @@
 class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
+  before_action :ensure_correct_customer, only: [:show]
 
   def new
     @customer = current_customer
@@ -33,7 +34,6 @@ class Public::OrdersController < ApplicationController
   def confirm
     @customer = current_customer
     @cart_items = current_customer.cart_items
-    #binding.pry
     @order = Order.new(order_params)
     # 自身の住所
     if params[:order][:select_address] == "customer_address"
@@ -65,6 +65,13 @@ class Public::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+  end
+
+  def ensure_correct_customer
+    order = Order.find(params[:id])
+    unless order.customer_id == current_customer.id
+      redirect_to root_path
+    end
   end
 
   private
