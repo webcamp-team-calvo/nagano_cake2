@@ -18,6 +18,9 @@ class Admin::OrdersController < ApplicationController
      redirect_to admin_order_path(@order)
   end
 
+  def index
+    @orders = Order.all.page(params[:page]).per(10)
+  end
 
   protected
   def order_params
