@@ -1,14 +1,13 @@
 <div class="container mt-5">
   <h3 class="bg-light text-center mb-4 ml-5" style="width:200px">マイページ</h3>
-    <div class="row">
-      <div class="col-md-2 col-lg-1">
-        <p class="font-weight-bold">登録情報</p>
-      </div>
-      <div class="col">
-        <span><%= link_to '編集する', edit_customers_path, class:'btn btn-success btn-sm' %></span>
-      </div>
+  <div class="row">
+    <div class="col-md-2 col-lg-1">
+      <p class="font-weight-bold">登録情報</p>
     </div>
-
+    <div class="col">
+      <span><%= link_to '編集する', edit_customers_path, class:'btn btn-success btn-sm' %></span>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-8">
@@ -45,15 +44,14 @@
     </div>
   </div>
 
-      <div class="row">
-        <div class="col-md-2 col-lg-1">
-        <p class="font-weight-bold mt-1">配送先</p>
-        <p class="font-weight-bold mt-4">注文履歴</p>
-        </div>
-        <div class="col">
-        <p><%= link_to '一覧を見る', deliveries_path, class:'btn btn-primary btn-sm' %></p>
-        <p><%= link_to '一覧を見る', orders_path, class:'btn btn-primary btn-sm' %></p>
-        </div>
-      </div>
-
+  <div class="row">
+    <div class="col-md-2 col-lg-1">
+      <p class="font-weight-bold mt-1">配送先</p>
+      <p class="font-weight-bold mt-4">注文履歴</p>
+    </div>
+    <div class="col">
+      <p><%= link_to '一覧を見る', deliveries_path, class:'btn btn-primary btn-sm' %></p>
+      <p><%= link_to '一覧を見る', orders_path, class:'btn btn-primary btn-sm' %></p>
+    </div>
+  </div>
 </div>
