@@ -1,14 +1,14 @@
 　<div class="container">
+　    <h3 class="bg-light text-center" style="width:250px">注文履歴詳細</h3>
 　  <div class="row">
-　    <h3>注文履歴詳細</h3>
 　    <div class="col-6">
 　      <!--請求情報ここから-->
-　      <h6>請求情報</h6>
+　      <p class="font-weight-bold">注文内容</p>
 　      <table class="table table-bordered">
 　        <tbody>
 　          <tr>
 　            <td class="table-active">注文日</td>
-　            <td><%= @order.created_at.strftime("%y/%m/%d") %></td>
+　            <td><%= @order.created_at.strftime("%Y/%m/%d") %></td>
 　          </tr>
 　          <tr>
 　            <td class="table-active">配送先</td>
@@ -33,13 +33,14 @@
 　        </tbody>
 　      </table>
 　      <!--注文情報ここから-->
-　      <h6>注文情報</h6>
+　      <p class="font-weight-bold">注文情報</p>
 　      <table class="table table-bordered">
 　        <tbody>
 　          <tr>
 　            <td class="table-active">商品</td>
 　            <td class="table-active">単価（税込み）</td>
 　            <td class="table-active">個数</td>
+　            <td class="table-active">ステータス</td>
 　            <td class="table-active">小計</td>
 　          </tr>
 　          <% @sum = 0 %>
@@ -49,6 +50,7 @@
 　            <td><%= order_item.item.name %></td>
 　            <td><%= addTax(order_item.item.price).to_s(:delimited) %></td>
 　            <td><%= order_item.amount %></td>
+　            <td><%= order_item.making_status %></td>
 　            <td><%= (@subtotal = addTax(order_item.item.price) * order_item.amount).to_s(:delimited) %></td>
 　          </tr>
 　          <% @sum += @subtotal %>
@@ -59,7 +61,7 @@
 　    </div>
       <!--注文内容ここから-->
 　    <div class="col-4">
-　      <h6>注文内容</h6>
+　      <p class="font-weight-bold">請求情報</p>
 　      <table class="table table-bordered">
 　        <tbody>
 　          <tr>
