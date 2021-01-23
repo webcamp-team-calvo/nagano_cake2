@@ -9,11 +9,11 @@ class Admin::ItemsController < ApplicationController
     @item = Item.new(item_params)
     # binding.pry
     @item.save
-    redirect_to admin_items_path
+    redirect_to admin_item_path(@item)
   end
 
   def index
-    @items = Item.all
+    @items = Item.all.page(params[:page]).per(10)
   end
 
   def show
