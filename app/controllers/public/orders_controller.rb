@@ -1,5 +1,6 @@
 class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
+  before_action :ensure_correct_customer, only: [:show]
 
   def new
     @customer = current_customer
@@ -63,6 +64,13 @@ class Public::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+  end
+
+  def ensure_correct_customer
+    order = Order.find(params[:id])
+    unless order.customer_id == current_customer.id
+      redirect_to root_path
+    end
   end
 
   private
