@@ -8,10 +8,9 @@ class Admin::OrderItemsController < ApplicationController
     @order_item.update(order_item_params)
     if @order_item.making_status == "製作中"
        @order.update(status: 2)
-    else
-      if @order.order_items.where(making_status: 3).count == @order.order_items.count
-         @order.update(status: 3)
-      end
+    elsif
+    　@order.order_items.where(making_status: 3).count == @order.order_items.count
+      @order.update(status: 3)
     end
     redirect_to admin_order_path(@order)
   end
@@ -20,5 +19,4 @@ class Admin::OrderItemsController < ApplicationController
   def order_item_params
     params.require(:order_item).permit(:making_status)
   end
-
 end
