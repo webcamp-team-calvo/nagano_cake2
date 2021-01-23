@@ -34,7 +34,6 @@ class Public::OrdersController < ApplicationController
   def confirm
     @customer = current_customer
     @cart_items = current_customer.cart_items
-    #binding.pry
     @order = Order.new(order_params)
     # 自身の住所
     if params[:order][:select_address] == "customer_address"
