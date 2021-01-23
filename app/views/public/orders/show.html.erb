@@ -41,7 +41,6 @@
 　            <td class="table-active">単価（税込み）</td>
 　            <td class="table-active">個数</td>
 　            <td class="table-active">ステータス</td>
-　            <td class="table-active">小計</td>
 　          </tr>
 　          <% @sum = 0 %>
 　          <% @subtotal = 0 %>
@@ -50,7 +49,6 @@
 　            <td><%= order_item.item.name %></td>
 　            <td><%= addTax(order_item.item.price).to_s(:delimited) %>円</td>
 　            <td><%= order_item.amount %></td>
-　            <td><%= order_item.making_status %></td>
 　            <td><%= (@subtotal = addTax(order_item.item.price) * order_item.amount).to_s(:delimited) %>円</td>
 　          </tr>
 　          <% @sum += @subtotal %>
