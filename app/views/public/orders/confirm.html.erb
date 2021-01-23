@@ -16,14 +16,13 @@
 						<th>小計</th>
 					</tr>
 				</thead>
-			
+
 				<tbody>
 					<% @sum = 0 %>
 					<% @subtotal = 0 %>
 					<% @customer.cart_items.includes([:item]).each do |cart_item| %>
 						<tr>
 							<td><%= attachment_image_tag cart_item.item, :image, size: "50x50", format: 'jpeg', fallback: "no-data.jpg", size: "50x50" %> <%= cart_item.item.name %></td>
-
 							<td><%= addTax(cart_item.item.price).to_s(:delimited) %>円</td>
 							<td><%= cart_item.amount %></td>
 							<td><%= (@subtotal = addTax(cart_item.item.price) * cart_item.amount).to_s(:delimited) %>円</td>

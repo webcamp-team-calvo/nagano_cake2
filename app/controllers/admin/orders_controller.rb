@@ -1,11 +1,11 @@
 class Admin::OrdersController < ApplicationController
-  
+
   def show
     @order = Order.find(params[:id])
     @order_items = @order.order_items.includes(:item)
-    @total_price = @order_items.sum{|order_item|(order_item.price * 1.1).round * order_item.amount }
+    @total_price = @order_items.sum{|order_item|(order_item.price).round * order_item.amount }
   end
-  
+
   def update
     @order = Order.find(params[:id])
     @order_items = @order.order_items
@@ -15,6 +15,12 @@ class Admin::OrdersController < ApplicationController
     elsif @order.status == "入金確認"
       @order_items.update_all(making_status: 1)
     end
-    redirect_to admins_order_item_path(@order)
+     redirect_to admin_order_path(@order)
+  end
+
+
+  protected
+  def order_params
+    params.require(:order).permit(:status)
   end
 end
