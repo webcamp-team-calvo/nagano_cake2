@@ -12,7 +12,7 @@
       <div class="pickup-item">
         <h3>新着商品</h3>
         <div>
-          <% @item.each.with_index(1) do |item| %>
+          <% @active_items.each.with_index(1) do |item| %>
             <div class="item-box">
               <div>
                 <%= link_to item_path(item) do %>
