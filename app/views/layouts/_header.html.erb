@@ -1,7 +1,10 @@
  <header>
-    <nav class="navbar navbar-expand-lg bg-secondary text-white">
+    <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand text-light" href="/" >NAGANOCAKE</a>
+      <!--<a class="navbar-brand text-dark" href="/" >NAGANOCAKE</a>-->
+      <a href="/">
+      <img src="assets/logo.jpg" class="img">
+      </a>
       <% if customer_signed_in? %>
         <li class="list-unstyled">ようこそ、<%= current_customer.last_name.to_s + " " +current_customer.first_name.to_s %>さん！</li>
       <% end %>
@@ -31,10 +34,10 @@
          <!-- admin、customerログイン前 -->
         <nav>
           <ul class="navbar-nav">
-            <li><%= link_to 'About',about_path,class: 'fas fa-laptop-house nav-link text-light' %></li>
-            <li><%= link_to '商品一覧',items_path, class: 'fas fa-birthday-cake nav-link text-light' %></li>
-            <li><%= link_to '新規登録', new_customer_registration_path, class: 'fas fa-user-plus nav-link text-light' %></li>
-            <li><%= link_to ' ログイン', new_customer_session_path, class: 'fas fa-sign-in-alt nav-link text-light' %></li>
+            <li><%= link_to 'About',about_path,class: 'fas fa-laptop-house nav-link text-dark' %></li>
+            <li><%= link_to 'Line Up',items_path, class: 'fas fa-birthday-cake nav-link text-dark' %></li>
+            <li><%= link_to 'Sign Up', new_customer_registration_path, class: 'fas fa-user-plus nav-link text-dark' %></li>
+            <li><%= link_to 'Sign In', new_customer_session_path, class: 'fas fa-sign-in-alt nav-link text-dark' %></li>
           </ul>
         </nav>
       <% end %>

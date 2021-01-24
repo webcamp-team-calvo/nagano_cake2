@@ -16,7 +16,11 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
- 
+
+header {
+  border-bottom: 2px solid #eee;
+}
+
     #title{
       text-align: center;
       font-size: 50px;
@@ -47,4 +51,21 @@
     #welcome-text {
       text-align: center;
       text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4)
+    }
+
+    .img {
+      height: 100px;
+      width: 100px;
+      text-align: center;
+    }
+
+    .a {
+      width: 60%;
+      margin: 20px auto 0;
+      display: flex;
+      justify-content: center;
+    }
+    .c {
+      height: 400px;
+      width: 100%;
     }
