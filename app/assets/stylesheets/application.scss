@@ -21,6 +21,15 @@ header {
   border-bottom: 2px solid #eee;
 }
 
+footer {
+  width: 100%;
+  height: 150px;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
     #title{
       text-align: center;
       font-size: 50px;
@@ -30,23 +39,29 @@ header {
 
    .welcome-message {
       width: 100%;
-      font-size: 25px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 20px;
+      margin: 0 auto;
     }
 
-    .pickup-item {
-      margin-left: 50px;
-      height: auto;
+    .welcome-message p {
+      width: 600px;
+      margin: 20px auto;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #ccc;
     }
 
-    .item-box {
-      float: left;
-      padding: 10px;
-      margin: 15px;
-      background-color: white;
-      border: 1px solid silver;
-    }
+    // .pickup-item {
+    //   margin-left: 50px;
+    //   height: auto;
+    // }
+
+    // .item-box {
+    //   float: left;
+    //   padding: 10px;
+    //   margin: 15px;
+    //   background-color: white;
+    //   border: 1px solid silver;
+    // }
 
     #welcome-text {
       text-align: center;
@@ -68,4 +83,50 @@ header {
     .c {
       height: 400px;
       width: 100%;
+    }
+
+    .e {
+      height: 200px;
+      width: 300px;
+    }
+
+
+    .new-items {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .hover-parent {
+      width: 250px;
+      height: 175px;
+      position: relative;
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+
+    .hover-mask {
+      width: 250px;
+      height: 175px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 5);
+      opacity: 0;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      transition: all .6s ease;
+      padding-bottom: 0;
+    }
+
+
+    .hover-parent:hover .hover-mask {
+      padding-bottom: 30px;
+      opacity: .5;
     }
