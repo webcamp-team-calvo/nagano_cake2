@@ -6,4 +6,6 @@ class CartItem < ApplicationRecord
     (item.price * 1.1 * amount).round
   end
 
+  #validates :amount, numericality: { only_integer: true }
+
 end
