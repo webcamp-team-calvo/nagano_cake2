@@ -26,6 +26,7 @@
       <td>
         <%= form_with model: cart_item, method: :patch, local: true do |f| %>
           <%= f.select :amount, options_for_select(((1..10).to_a), :selected => cart_item.amount) %>
+          
           <%= f.submit '変更', class: 'btn btn-success' %>
         <% end %>
       </td>
