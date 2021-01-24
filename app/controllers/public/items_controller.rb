@@ -1,5 +1,5 @@
 class Public::ItemsController < ApplicationController
-
+  
   def index
     @active_items = Item.where(is_active: true).page(params[:page])
   end
