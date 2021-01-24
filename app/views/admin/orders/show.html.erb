@@ -7,7 +7,7 @@
 
 			   <tr>
 			  	 <th>購入者</th>
-			  	 <td><%= link_to @order.customer.full_name, admin_customer_path(@order) %></td>
+			  	 <td><%= link_to @order.customer.full_name, admin_customer_path(@order.customer_id) %></td>
 			   </tr>
 
 			   <tr>

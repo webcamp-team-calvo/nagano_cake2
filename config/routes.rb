@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :customers, skip: 'registrations', controllers: {
     sessions: 'public/sessions'
   }
-  devise_for :admins
+  devise_for :admins, controllers: {
+    sessions: 'admin/sessions'
+  }
 
   devise_scope :customer do
     get 'edit' => 'public/registrations#edit'
