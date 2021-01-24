@@ -1,60 +1,60 @@
-　<div class="container">
-　    <h3 class="bg-light text-center" style="width:250px">注文履歴詳細</h3>
-　  <div class="row">
-　    <div class="col-6">
-　      <!--注文内容ここから-->
-　      <p class="font-weight-bold">注文内容</p>
-　      <table class="table table-bordered">
-　        <tbody>
-　          <tr>
-　            <td class="table-active">注文日</td>
-　            <td><%= @order.created_at.strftime("%Y/%m/%d") %></td>
-　          </tr>
-　          <tr>
-　            <td class="table-active">配送先</td>
-　            <td>
-　              〒<%= @order.postcode %><br />
-　              <%= @order.address %><br />
-　              <%= @order.name %>
-　            </td>
-　          </tr>
-　          <tr>
-　            <td class="table-active">支払方法</td>
+<div class="container mt-5">
+  <h3 class="bg-light text-center" style="width:250px">注文履歴詳細</h3>
+　<div class="row">
+　  <div class="col-6">
+　    <!--注文内容ここから-->
+　    <p class="font-weight-bold">注文内容</p>
+　    <table class="table table-bordered">
+　      <tbody>
+　        <tr>
+　          <td class="table-active">注文日</td>
+　          <td><%= @order.created_at.strftime("%Y/%m/%d") %></td>
+　        </tr>
+　        <tr>
+　          <td class="table-active">配送先</td>
+　          <td>
+　           〒<%= @order.postcode %><br />
+　           <%= @order.address %><br />
+　           <%= @order.name %>
+　          </td>
+　        </tr>
+　        <tr>
+　          <td class="table-active">支払方法</td>
 　            <% if @order.payment_method == 0 %>
-　              <td>クレジットカード</td>
+　          <td>クレジットカード</td>
               <% else %>
-　              <td>銀行振込</td>
+　          <td>銀行振込</td>
               <% end %>
-　          </tr>
-　          <tr>
-　            <td class="table-active">ステータス</td>
-　            <td><%= @order.status %></td>
-　          </tr>
-　        </tbody>
-　      </table>
-　      <!--注文情報ここから-->
-　      <p class="font-weight-bold">注文情報</p>
-　      <table class="table table-bordered">
-　        <tbody>
-　          <tr>
-　            <td class="table-active">商品</td>
-　            <td class="table-active">単価（税込み）</td>
-　            <td class="table-active">個数</td>
-　            <td class="table-active">小計</td>
-　          </tr>
-　          <% @sum = 0 %>
-　          <% @subtotal = 0 %>
-　          <% @order.order_items.each do |order_item| %>
-　          <tr>
-　            <td><%= order_item.item.name %></td>
-　            <td><%= addTax(order_item.item.price).to_s(:delimited) %>円</td>
-　            <td><%= order_item.amount %></td>
-　            <td><%= (@subtotal = addTax(order_item.item.price) * order_item.amount).to_s(:delimited) %>円</td>
-　          </tr>
-　          <% @sum += @subtotal %>
-　          <% end %>
-　        </tbody>
-　      </table>
+　        </tr>
+　        <tr>
+　          <td class="table-active">ステータス</td>
+　          <td><%= @order.status %></td>
+　        </tr>
+　      </tbody>
+　    </table>
+　    <!--注文情報ここから-->
+　    <p class="font-weight-bold">注文情報</p>
+　    <table class="table table-bordered">
+　      <tbody>
+　        <tr>
+　          <td class="table-active" width="250">商品</td>
+　          <td class="table-active">単価（税込み）</td>
+　          <td class="table-active">個数</td>
+　          <td class="table-active">小計</td>
+　        </tr>
+　        <% @sum = 0 %>
+　        <% @subtotal = 0 %>
+　        <% @order.order_items.each do |order_item| %>
+　        <tr>
+　          <td width="250"><%= order_item.item.name %></td>
+　          <td><%= addTax(order_item.item.price).to_s(:delimited) %>円</td>
+　          <td><%= order_item.amount %></td>
+　          <td><%= (@subtotal = addTax(order_item.item.price) * order_item.amount).to_s(:delimited) %>円</td>
+　        </tr>
+　        <% @sum += @subtotal %>
+　        <% end %>
+　      </tbody>
+　    </table>
 
 　    </div>
       <!--請求情報ここから-->

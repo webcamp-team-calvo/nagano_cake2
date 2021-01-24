@@ -8,7 +8,7 @@ class Delivery < ApplicationRecord
 	end
 
   def  total_address
-  	postcode + "" + address + "" + name
+  	"〒" + postcode + " " + address + "　" + name
   end
 
 end
