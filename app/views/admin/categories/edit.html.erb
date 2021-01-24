@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="row">
+  <div class="row mt-5">
 	 <div class="col-lg-5">
 
-    <h5 class="m-5">ジャンル編集</h5>
+    <h5 class="bg-light text-center" style="width:150px">ジャンル編集</h5>
       <%= form_with model: [:admin, @category], local:true do |f| %>
-        <table class="table">
+        <table class="table mt-5">
           <tr>
            <th>ジャンル名</th>
            <th><%= f.text_field :name %></th>
