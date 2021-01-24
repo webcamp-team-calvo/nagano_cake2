@@ -1,40 +1,40 @@
  <header>
-    <nav class="navbar navbar-expand-lg bg-secondary text-white">
+    <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand text-light" href="/" >NAGANOCAKE</a>
+      <a class="navbar-brand text-dark" href="/" >NAGANOCAKE</a>
       <% if customer_signed_in? %>
-        <li class="list-unstyled">ようこそ、<%= current_customer.last_name.to_s + " " +current_customer.first_name.to_s %>さん！</li>
+        <li class="list-unstyled text-dark">ようこそ、<%= current_customer.last_name.to_s + " " +current_customer.first_name.to_s %>さん！</li>
       <% end %>
       <!-- adminログイン後ヘッダー -->
       <ul class="navbar-nav ml-auto">
       <% if admin_signed_in? %>
         <nav>
          <ul class="navbar-nav">
-            <li><%= link_to '商品一覧', admin_items_path, class: 'fas fa-birthday-cake nav-link text-light' %></li>
-            <li><%= link_to '会員一覧',admin_customers_path, class: 'fas fa-users nav-link text-light' %></li>
-            <li><%= link_to '注文履歴',admin_root_path,class: 'fas fa-shopping-cart nav-link text-light' %></li>
-            <li><%= link_to 'ジャンル一覧',new_admin_category_path,class: 'fas fa-caret-down nav-link text-light' %></li>
-            <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
+            <li><%= link_to ' 商品一覧', admin_items_path, class: 'fas fa-birthday-cake nav-link text-dark' %></li>
+            <li><%= link_to ' 会員一覧',admin_customers_path, class: 'fas fa-users nav-link text-dark' %></li>
+            <li><%= link_to ' 注文履歴',admin_root_path,class: 'fas fa-shopping-cart nav-link text-dark' %></li>
+            <li><%= link_to ' ジャンル一覧',new_admin_category_path,class: 'fas fa-caret-down nav-link text-dark' %></li>
+            <li><%= link_to ' ログアウト', destroy_admin_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-dark' %></li>
           </ul>
         </nav>
       <!-- カスタマーログイン後 -->
       <% elsif customer_signed_in? %>
         <nav>
           <ul class="navbar-nav">
-            <li><%= link_to 'マイページ',customers_path,class: 'fas fa-house-user nav-link text-light' %></li>
-            <li><%= link_to '商品一覧', items_path,class: 'fas fa-birthday-cake nav-link text-light' %></li>
-            <li><%= link_to 'カート',cart_items_path ,class: 'fas fa-cart-plus nav-link text-light'%></li>
-            <li><%= link_to 'ログアウト', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
+            <li><%= link_to ' マイページ',customers_path,class: 'fas fa-house-user nav-link text-dark' %></li>
+            <li><%= link_to ' 商品一覧', items_path,class: 'fas fa-birthday-cake nav-link text-dark' %></li>
+            <li><%= link_to ' カート',cart_items_path ,class: 'fas fa-cart-plus nav-link text-dark'%></li>
+            <li><%= link_to ' ログアウト', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-dark' %></li>
           </ul>
         </nav>
       <% else %>
          <!-- admin、customerログイン前 -->
         <nav>
           <ul class="navbar-nav">
-            <li><%= link_to 'About',about_path,class: 'fas fa-laptop-house nav-link text-light' %></li>
-            <li><%= link_to '商品一覧',items_path, class: 'fas fa-birthday-cake nav-link text-light' %></li>
-            <li><%= link_to '新規登録', new_customer_registration_path, class: 'fas fa-user-plus nav-link text-light' %></li>
-            <li><%= link_to ' ログイン', new_customer_session_path, class: 'fas fa-sign-in-alt nav-link text-light' %></li>
+            <li><%= link_to ' About',about_path,class: 'fas fa-laptop-house nav-link text-secondary' %></li>
+            <li><%= link_to ' 商品一覧',items_path, class: 'fas fa-birthday-cake nav-link text-secondary' %></li>
+            <li><%= link_to ' 新規登録', new_customer_registration_path, class: 'fas fa-user-plus nav-link text-secondary' %></li>
+            <li><%= link_to ' ログイン', new_customer_session_path, class: 'fas fa-sign-in-alt nav-link text-secondary' %></li>
           </ul>
         </nav>
       <% end %>
