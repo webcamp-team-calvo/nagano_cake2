@@ -6,8 +6,8 @@ class Item < ApplicationRecord
   attachment :image
 
  with_options presence: true do
-    validates :image_id
-    validates :category_id
+    validates :image
+    #validates :category_id
     validates :name, length: {maximum: 20, minimum: 1}
     validates :information
     validates :price, numericality: true

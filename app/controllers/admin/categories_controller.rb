@@ -8,8 +8,12 @@ class Admin::CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
-    @category.save
+    if @category.save
     redirect_to new_admin_category_path
+    else
+      @categories = Category.all
+      render :new
+    end
   end
 
   def edit

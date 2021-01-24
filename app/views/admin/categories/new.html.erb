@@ -5,6 +5,7 @@
     <h5 class="bg-light text-center" style="width:180px">ジャンル一覧・追加</h5>
     
       <%= form_with model: [:admin, @category], local:true do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
         <table class="table mt-5">
           <tr>
             <th>ジャンル名</th>

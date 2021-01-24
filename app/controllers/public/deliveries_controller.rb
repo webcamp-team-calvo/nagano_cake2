@@ -1,8 +1,8 @@
 class Public::DeliveriesController < ApplicationController
-  
+
   before_action :authenticate_customer!
-  
-  
+
+
   def index
     @delivery = Delivery.new
     @deliveries = current_customer.deliveries
@@ -14,8 +14,12 @@ class Public::DeliveriesController < ApplicationController
 
   def create
     @deliveries = current_customer.deliveries.new(delivery_params)
-    @deliveries.save
-    redirect_to deliveries_path
+    if @deliveries.save
+      redirect_to deliveries_path
+    else
+      render :index
+      @deliveries = current_customer.deliveries
+    end
   end
 
   def update
