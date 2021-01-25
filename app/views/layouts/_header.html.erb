@@ -10,11 +10,11 @@
       <% if admin_signed_in? %>
         <nav>
          <ul class="navbar-nav">
-            <li><%= link_to ' 商品一覧', admin_items_path, class: 'fas fa-birthday-cake nav-link text-dark' %></li>
-            <li><%= link_to ' 会員一覧',admin_customers_path, class: 'fas fa-users nav-link text-dark' %></li>
-            <li><%= link_to ' 注文履歴',admin_root_path,class: 'fas fa-shopping-cart nav-link text-dark' %></li>
-            <li><%= link_to ' ジャンル一覧',new_admin_category_path,class: 'fas fa-caret-down nav-link text-dark' %></li>
-            <li><%= link_to ' ログアウト', destroy_admin_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-dark' %></li>
+            <li><%= link_to ' Cakes', admin_items_path, class: 'fas fa-birthday-cake nav-link text-dark' %></li>
+            <li><%= link_to ' Members',admin_customers_path, class: 'fas fa-users nav-link text-dark' %></li>
+            <li><%= link_to ' Orders',admin_root_path,class: 'fas fa-shopping-cart nav-link text-dark' %></li>
+            <li><%= link_to ' Category',new_admin_category_path,class: 'fas fa-caret-down nav-link text-dark' %></li>
+            <li><%= link_to ' Logout', destroy_admin_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-dark' %></li>
           </ul>
         </nav>
       <!-- カスタマーログイン後 -->
@@ -32,9 +32,9 @@
         <nav>
           <ul class="navbar-nav">
             <li><%= link_to ' About',about_path,class: 'fas fa-laptop-house nav-link text-dark' %></li>
-            <li><%= link_to ' 商品一覧',items_path, class: 'fas fa-birthday-cake nav-link text-dark' %></li>
-            <li><%= link_to ' 新規登録', new_customer_registration_path, class: 'fas fa-user-plus nav-link text-dark' %></li>
-            <li><%= link_to ' ログイン', new_customer_session_path, class: 'fas fa-sign-in-alt nav-link text-dark' %></li>
+            <li><%= link_to ' Cakes',items_path, class: 'fas fa-birthday-cake nav-link text-dark' %></li>
+            <li><%= link_to ' SignUp', new_customer_registration_path, class: 'fas fa-user-plus nav-link text-dark' %></li>
+            <li><%= link_to ' Login', new_customer_session_path, class: 'fas fa-sign-in-alt nav-link text-dark' %></li>
           </ul>
         </nav>
       <% end %>
