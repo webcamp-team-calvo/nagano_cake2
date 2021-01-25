@@ -138,7 +138,12 @@ footer {
   padding: 30px;
   transition: all .6s ease;
   padding-bottom: 0;
+
+  p {
+    text-align: center;
+  }
 }
+
 
   // 新規商品画像ホバー時に商品名、値段を表示
 .hover-parent:hover .hover-mask {
