@@ -35,13 +35,28 @@ header, body, footer {
       //text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4)
    }
 
-   .welcome-message {
-      width: 100%;
-      height: 500px;
+  .jumbotron {
       background-image: url(cake4.jpg);
       background-size: cover;
       position:  relative;
+  }
+
+   .welcome-message {
+      width: 100%;
+      height: 300px;
    }
+
+    #welcome-text {
+      width: 100%;
+      height: 100px;
+      text-align: left;
+      font-size: 15px;
+      position: absolute;
+      left: 50px;
+      top: 20px;
+      color: black;
+      letter-spacing: 5px;
+    }
 
    .new_arrival {
    }
@@ -59,14 +74,4 @@ header, body, footer {
       border: 1px solid silver;
     }
 
-    #welcome-text {
-      width: 100%;
-      height: 500px;
-      text-align: left;
-      font-size: 15px;
-      position: absolute;
-      left: 50px;
-      top: 20px;
-      color: black;
-      letter-spacing: 5px;
-    }
+

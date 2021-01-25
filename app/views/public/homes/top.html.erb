@@ -1,16 +1,19 @@
-<div class="container">
-  <div class="row">
-   <div>
-
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
       <div class="welcome-message">
         <p id="welcome-text">ようこそ、NaganoCakeへ!<br>
         このサイトは、ケーキ販売のECサイトになります。<br>
         会員でない方も商品の閲覧はできますが、<br>
         購入には会員登録が必要になります。</p>
       </div>
-
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
       <div class="pickup-item mt-5">
-        <h3 class="new_arrival">新着商品</h3>
+        <h3 class="new_arrival">New</h3>
         <div>
           <% @active_items.each.with_index(1) do |item| %>
             <div class="item-box">
@@ -23,9 +26,12 @@
               <p>¥<%= (item.price * 1.1).round %>(税込)</p>
             </div>
           <% end %>
-        </div>
+        </div >
+        <div class="color: black;">
         <%= link_to "全ての商品を見る", items_path %>
+        </div>
       </div>
     </div>
   </div>
+</div>
 </div>
