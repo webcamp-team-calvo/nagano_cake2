@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :show, :update]
     resources :order_items, only: [:update]
     root to: 'homes#top'
+    get '/search', to: 'search#search'
   end
 
   scope module: :public do
