@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
 
     <div class="col-xs-offset-1">
  	    <table class="table">
-	      <h4>注文履歴詳細</h4>
+	      <h4 class="mb-3">注文履歴詳細</h4>
 
 			   <tr>
 			  	 <th>購入者</th>
@@ -32,7 +32,7 @@
 			  	   <%#= form_for (@order), url: admin_order_path(@order), method: :patch do |f| %>
 			  	   <%= form_with :model => @order, url: admin_order_path(@order), method: :patch, local: true  do |f| %>
 			  	   <%= f.select :status, Order.statuses.keys.to_a %>
-			  	   <%= f.submit "更新" , class: "btn btn-primary" %>
+			  	   <%= f.submit "更新" , class: "btn btn-primary btn-sm" %>
 	           <% end %>
 			  	 </td>
 			   </tr>
@@ -63,7 +63,7 @@
 				  		<%#= form_for (order_item), url: admin_order_item_path(order_item), method: :patch do |f| %>
 				  		<%= form_with :model => order_item, url: admin_order_item_path(order_item), method: :patch, local: true  do |f| %>
 				  	  <%= f.select :making_status, OrderItem.making_statuses.keys.to_a %>
-				  	  <%= f.submit "更新" , class: "btn btn-primary" %>
+				  	  <%= f.submit "更新" , class: "btn btn-primary btn-sm" %>
 				  	  <% end %>
 				  	</td>
 				  </tr>

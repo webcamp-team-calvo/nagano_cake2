@@ -25,13 +25,13 @@ body {
   font-family: 'Lato','游ゴシック体','YuGothic','游ゴシック','Yu Gothic','sans-serif','sans-serif';
 }
 
-// ヘッダー
+// ヘッダーここまで
 header {
   border-bottom: 1px dashed #ffb300;
   background: white;
   width: 100%;
   height: 120px;
-  background: rgba(232, 228, 220, 0.2);
+  background: rgba(232, 228, 220, 0.5);
   position: fixed;
   top: 0;
   z-index: 10;
@@ -49,7 +49,7 @@ header {
 .navbar-nav li:hover {
   border-bottom: 1px dashed #ffb300;
 }
-
+// ヘッダーここまで
 
 #title{
   text-align: center;
@@ -60,7 +60,7 @@ header {
 
 // スライドショーここから
 .a {
-  width: 80%;
+  width: 90%;
   margin: 20px auto;
   display: flex;
   justify-content: center;
@@ -69,7 +69,7 @@ header {
 }
 
 .c {
-  height: 500px;
+  height: 550px;
   width: 100%;
 }
 
@@ -79,10 +79,11 @@ header {
 
 .slide-text {
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 50px;
+  left: 50px;
   color: white;
   font-size: 20px;
+  letter-spacing: 5px;
   font-family: 'Crimson Text', serif;
 }
 // スライドショーここまで
@@ -190,6 +191,90 @@ header {
 }
 // 新規商品ここまで
 
+// アバウトページ
+.about {
+  background-image: url;
+  background-size: cover;
+  position: relative;
+  background-position: right 50% bottom 20%;
+}
+
+.welcome-message_about {
+  width: 100%;
+  height: 300px;
+}
+
+#ewlcome-text_about {
+  width: 100%;
+  height: 100px;
+  text-align: left;
+  font-size: 20px;
+  position: absolute;
+  left: 50px;
+  top: 160px;
+  color: black;
+  letter-spacing: 5px;
+  font-family: serif;
+}
+
+.shef_image {
+  width: 300px;
+  height: 300px;
+  background-image: url();
+  background-size: cover;
+}
+
+.shef_introduction {
+  text-align: left;
+}
+
+.shef_name {
+  border-bottom: solid 2px #343a40;
+  text-align: center;
+}
+
+.fruits_image {
+  width: 300px;
+  height: 300px;
+  background-image: url(fruits.jp);
+  background-size: cover;
+}
+
+.fruits_introduction {
+  text-align: left;
+}
+
+.fruits_head {
+  border-bottom: solid 2px #343a40;
+  text-align: center;
+}
+
+.access_image {
+  width: 300px;
+  height: 300px;
+  background-image: url(shop.jpg);
+  background-size: cover;
+  background-position: right 50% bottom 40%;
+}
+
+.access_introduction {
+  text-align: left;
+}
+
+.access_head {
+  border-bottom: solid 2px #343a40;
+  text-align: center;
+}
+
+.item-img-index {
+  transition: 1s all;
+}
+
+.item-img-index:hover {
+  transform: scale(1.2, 1.2);
+  transition: 1s all;
+}
+
 // ページネーションのCSS
 .pagination>li>a {
   border: none;     /*枠線をなくす*/
@@ -228,14 +313,15 @@ header {
     .error li{
     list-style:none;
   }
-  
+
   // フッター
 footer {
   width: 100%;
   height: 150px;
-  background: rgba(232, 228, 220, 0.2);
+  background: rgba(232, 228, 220, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   border-top: 1px dashed #ffb300;
+  margin-top: 50px;
 }

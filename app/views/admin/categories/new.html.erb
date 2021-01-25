@@ -2,14 +2,14 @@
   <div class="row mt-5">
 	<div class="col-lg-5">
 
-    <h5 class="bg-light text-center" style="width:180px">ジャンル一覧・追加</h5>
-    
+    <h4 class="text-center" style="width:250px">ジャンル一覧・追加</h4>
+
       <%= form_with model: [:admin, @category], local:true do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
         <table class="table mt-5">
           <tr>
             <th>ジャンル名</th>
-            <th><%= f.text_field :name, :placeholder => "ジャンル名"%></th>
+            <th><%= f.text_field :name, :placeholder => "ジャンル名", class:"form-control" %></th>
             <th><%= f.submit "新規登録", class: "btn btn-success" %></th>
           </tr>
          </table>
