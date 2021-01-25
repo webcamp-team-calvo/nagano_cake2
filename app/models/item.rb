@@ -6,9 +6,7 @@ class Item < ApplicationRecord
   attachment :image
   
   def self.search_for(content, method)
-    if method == 'perfect'
-      Item.where(name: content)
-    elsif method == 'forward'
+    if method == 'forward'
       Item.where('name LIKE ?', content+'%')
     elsif method == 'backward'
       Item.where('name LIKE ?', '%'+content)
