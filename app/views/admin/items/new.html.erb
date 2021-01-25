@@ -4,6 +4,7 @@
      <h3 class="bg-light text-center" style="width:180px">商品新規登録</h3>
      
 　     <%= form_with model: [:admin, @item], local:true do |f| %>
+　     <%= render 'layouts/error_messages', model: f.object %>
 　        <div class="field">
             <label class="col-sm-2">画像投稿</label>
               <%= f.attachment_field :image %>
@@ -21,7 +22,8 @@
 
           <div class="form-group">
             <label class="col-sm-2">ジャンル</label>
-              <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: '選択してください'} %>
+              <%#= f.collection_select :category_id, Category.all, :id, :name, {prompt: '選択してください'} %>
+              <%= f.select :category_id, Category.all.map {|category| [category.name, category.id ] } %>
           </div>
 
           <div class="form-group">

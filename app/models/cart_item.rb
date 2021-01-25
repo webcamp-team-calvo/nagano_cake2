@@ -7,5 +7,5 @@ class CartItem < ApplicationRecord
   end
 
   #validates :amount, numericality: { only_integer: true }
-
+  validates :amount, presence: true, numericality: true
 end

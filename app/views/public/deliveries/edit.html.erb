@@ -5,6 +5,7 @@
 	    <div class="row">
 
 	      <%= form_with model:@delivery, local: true do |f| %>
+	      <%= render 'layouts/error_messages', model: f.object %>
 
 		  <table class="table">
 		  	<tr>

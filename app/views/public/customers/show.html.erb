@@ -5,7 +5,7 @@
       <p class="font-weight-bold">登録情報</p>
     </div>
     <div class="col">
-      <span><%= link_to '編集する', edit_customers_path, class:'btn btn-success btn-sm' %></span>
+      <span><%= link_to '編集する', edit_customer_path, class:'btn btn-success btn-sm' %></span>
     </div>
   </div>
 
@@ -16,27 +16,27 @@
         <tbody>
           <tr>
             <td class="table-secondary" width="150">氏名</td>
-            <td><%= current_customer.last_name %>　<%= current_customer.first_name %></td>
+            <td><%= @customer.last_name %>　<%= @customer.first_name %></td>
           </tr>
           <tr>
             <td class="table-secondary" width="150">カナ</td>
-            <td><%= current_customer.last_name_kana %>　<%= current_customer.first_name_kana %></td>
+            <td><%= @customer.last_name_kana %>　<%= @customer.first_name_kana %></td>
           </tr>
           <tr>
             <td class="table-secondary" width="150">郵便番号</td>
-            <td><%= current_customer.postcode %></td>
+            <td><%= @customer.postcode %></td>
           </tr>
           <tr>
             <td class="table-secondary" width="150">住所</td>
-            <td><%= current_customer.address %></td>
+            <td><%= @customer.address %></td>
           </tr>
           <tr>
             <td class="table-secondary" width="150">電話番号</td>
-            <td><%= current_customer.phone_number %></td>
+            <td><%= @customer.phone_number %></td>
           </tr>
           <tr>
             <td class="table-secondary" width="150">メールアドレス</td>
-            <td><%= current_customer.email %></td>
+            <td><%= @customer.email %></td>
           </tr>
         </tbody>
       </table>
