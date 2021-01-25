@@ -2,17 +2,24 @@ class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
   
   def show
-    
+     @customer = Customer.find(params[:id])
+     #最初は記述なし
+     #それだとIDが引っ張ってこれずにエラー文が発生させられない
   end
   
   def edit
-    @customer = current_customer
+     #@customer = current_customer
+      @customer = Customer.find(params[:id])
   end
   
   def update
-    @customer = current_customer
-    @customer.update(customer_params)
-    redirect_to customers_path
+    @customer = Customer.find(params[:id])
+    #@customer = current_customer
+    if @customer.update(customer_params)
+       redirect_to customer_path(current_customer.id), notice: "登録情報を編集しました"
+    else
+       render :edit
+    end
   end
   
   def quit

@@ -4,8 +4,10 @@ class Public::DeliveriesController < ApplicationController
 
 
   def index
+    #@deliveries = current_customer.deliveries
+    #current_customerだとIDが引っ張ってこれないので修正
+    @deliveries = Delivery.where(customer_id: current_customer.id)
     @delivery = Delivery.new
-    @deliveries = current_customer.deliveries
   end
 
   def edit
@@ -13,12 +15,16 @@ class Public::DeliveriesController < ApplicationController
   end
 
   def create
-    @deliveries = current_customer.deliveries.new(delivery_params)
-    if @deliveries.save
-      redirect_to deliveries_path
+    @delivery = Delivery.new(delivery_params)
+    @delivery.customer_id = current_customer.id
+    #@delivery = current_customer.deliveries.new(delivery_params)
+    #current_customerでデータを持ってくるとエラー文を発生させることができない
+    if @delivery.save
+      redirect_to deliveries_path, success: "配送先の新規登録が完了しました。"
     else
+      #@deliveries = current_customer.deliveries
+      @deliveries = Delivery.where(customer_id: current_customer.id)
       render :index
-      @deliveries = current_customer.deliveries
     end
   end
 
