@@ -22,10 +22,12 @@
             <%= attachment_image_tag item, :image, :fill, 250, 175, fallback: "noimage.jpg" %>
           <% end %>
           <div class="hover-mask">
+            <%= link_to item_path(item), class:"itemlink" do %>
             <p>
               <%= item.name %><br />
               ¥<%= (item.price * 1.1).round %>(税込)
             </p>
+            <% end %>
           </div>
         </div>
         <div class="new">NEW</div>

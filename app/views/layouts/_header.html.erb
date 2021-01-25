@@ -3,7 +3,7 @@
     <div class="container">
       <!--<a class="navbar-brand text-dark" href="/" >NAGANOCAKE</a>-->
       <a href="/">
-      <img src="assets/logo.jpg" class="logo-img">
+      <img src="assets/logo.jpg" class="logo-img mr-2">
       </a>
       <% if customer_signed_in? %>
         <li class="list-unstyled">ようこそ、<%= current_customer.last_name.to_s + " " +current_customer.first_name.to_s %>さん！</li>
