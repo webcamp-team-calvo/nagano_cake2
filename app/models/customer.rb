@@ -18,13 +18,13 @@ class Customer < ApplicationRecord
 
   def self.search_for(content, method)
     if method == 'perfect'
-      Customer.where(last_name: content)
+      Customer.where(last_name: content).or(Customer.where(first_name: content))
     elsif method == 'forward'
-      Customer.where('last_name LIKE ?', content + '%')
+      Customer.where('last_name LIKE ? OR first_name LIKE ?', content + '%',content + '%')
     elsif method == 'backward'
-      Customer.where('last_name LIKE ?', '%' + content)
+      Customer.where('last_name LIKE ? OR first_name LIKE ?', '%' + content,'%' + content)
     else
-      Customer.where('last_name LIKE ?', '%' + content + '%')
+      Customer.where('last_name LIKE ? OR first_name LIKE ?', '%' + content + '%','%' + content + '%')
     end
   end
 
