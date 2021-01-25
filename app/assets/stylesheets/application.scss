@@ -17,10 +17,14 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
+// ヘッダー
 header {
   border-bottom: 2px solid #eee;
+
+  width: 100%;
 }
 
+// フッター
 footer {
   width: 100%;
   height: 150px;
@@ -30,103 +34,115 @@ footer {
   align-items: center;
 }
 
-    #title{
-      text-align: center;
-      font-size: 50px;
-      margin-top: 30px;
-      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4)
-   }
+#title{
+  text-align: center;
+  font-size: 50px;
+  margin-top: 30px;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4)
+}
 
-   .welcome-message {
-      width: 100%;
-      font-size: 20px;
-      margin: 0 auto;
-    }
+// スライドショーここから
+.a {
+  width: 60%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+}
 
-    .welcome-message p {
-      width: 600px;
-      margin: 20px auto;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #ccc;
-    }
+.c {
+  height: 400px;
+  width: 100%;
+}
 
-    // .pickup-item {
-    //   margin-left: 50px;
-    //   height: auto;
-    // }
+// ウェルカムメッセージここから
+.welcome-message {
+  width: 100%;
+  font-size: 20px;
+  margin: 20px auto 40px;
+}
 
-    // .item-box {
-    //   float: left;
-    //   padding: 10px;
-    //   margin: 15px;
-    //   background-color: white;
-    //   border: 1px solid silver;
-    // }
+.welcome-message p {
+  width: 600px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
 
-    #welcome-text {
-      text-align: center;
-      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4)
-    }
+#welcome-text {
+  text-align: center;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4)
+}
+// ウェルカムメッセージここまで
 
-    .img {
-      height: 100px;
-      width: 100px;
-      text-align: center;
-    }
+// ロゴ
+.logo-img {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+}
 
-    .a {
-      width: 60%;
-      margin: 20px auto 0;
-      display: flex;
-      justify-content: center;
-    }
-    .c {
-      height: 400px;
-      width: 100%;
-    }
+// スライドショーここまで
 
-    .e {
-      height: 200px;
-      width: 300px;
-    }
+// 新規商品ここから
+.new-items {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
 
+.new-item {
+  display: flex;
+  width: 270px;
+  height: 195px;
+  position: relative;
+}
 
-    .new-items {
-      width: 100%;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-around;
-    }
+.new {
+  width: 50px;
+  height: 50px;
+  padding: 15px 0;
+  font-size: 15px;
+  text-align: center;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+}
 
-    .hover-parent {
-      width: 250px;
-      height: 175px;
-      position: relative;
-      margin-bottom: 30px;
-      overflow: hidden;
-    }
+.hover-parent {
+  width: 250px;
+  height: 175px;
+  position: relative;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
 
-    .hover-mask {
-      width: 250px;
-      height: 175px;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 5);
-      opacity: 0;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-      transition: all .6s ease;
-      padding-bottom: 0;
-    }
+.hover-mask {
+  width: 250px;
+  height: 175px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 5);
+  opacity: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  transition: all .6s ease;
+  padding-bottom: 0;
+}
 
-
-    .hover-parent:hover .hover-mask {
-      padding-bottom: 30px;
-      opacity: .5;
-    }
+  // 新規商品画像ホバー時に商品名、値段を表示
+.hover-parent:hover .hover-mask {
+  padding-bottom: 30px;
+  opacity: .5;
+}
+// 新規商品ここまで
