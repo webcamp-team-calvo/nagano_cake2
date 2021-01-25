@@ -24,6 +24,7 @@ body {
   height: auto;
   font-family: 'Lato','游ゴシック体','YuGothic','游ゴシック','Yu Gothic','sans-serif','sans-serif';
 }
+
 // ヘッダー
 header {
   border-bottom: 1px dashed #ffb300;
@@ -47,17 +48,6 @@ header {
 
 .navbar-nav li:hover {
   border-bottom: 1px dashed #ffb300;
-}
-
-// フッター
-footer {
-  width: 100%;
-  height: 150px;
-  background: rgba(232, 228, 220, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top: 1px dashed #ffb300;
 }
 
 
@@ -209,4 +199,43 @@ footer {
 /* 表示しているページ番号のデザイン */
 .pagination>.active>a {
   background: #93c9ff;     /*背景の色を変える*/
+}
+
+// エラーメッセージ
+.alert{
+    color:#262626;
+    background:#FFEBE8;
+    text-align: center;
+    border:2px solid #990000;
+    padding:12px; font-weight:850;
+    }
+
+   .notice {
+    color:#262626;
+    background:#ffebe800;
+    text-align: center;
+    border: 2px solid #2196F3;
+    padding:12px; font-weight:850;
+  }
+    .error{
+    color:#262626;
+    background:#FFEBE8;
+    text-align: center;
+    border:2px solid #990000;
+    padding:12px; font-weight:850;
+    }
+
+    .error li{
+    list-style:none;
+  }
+  
+  // フッター
+footer {
+  width: 100%;
+  height: 150px;
+  background: rgba(232, 228, 220, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px dashed #ffb300;
 }
