@@ -110,3 +110,51 @@ header, body, footer {
       font-size: 15px;
     }
 
+    .shef_image {
+      width:300px;
+      height:300px ;
+      background-image: url(shef.jpg);
+      background-size: cover;
+    }
+
+    .shef_introduction {
+      text-align: left;
+    }
+
+    .shef_name {
+      border-bottom: solid 2px #343a40;
+      text-align: center;
+    }
+
+    .fruits_image {
+      width:300px;
+      height:300px ;
+      background-image: url(fruits.jpg);
+      background-size: cover;
+    }
+
+    .fruits_introduction {
+      text-align: left;
+    }
+
+    .fruits_head {
+      border-bottom: solid 2px #343a40;
+      text-align: center;
+    }
+
+    .access_image {
+      width:300px;
+      height:300px ;
+      background-image: url(shop.jpg);
+      background-size: cover;
+      background-position: right 50% bottom 40%;
+    }
+
+    .access_introduction {
+      text-align: left;
+    }
+
+    .access_head {
+      border-bottom: solid 2px #343a40;
+      text-align: center;
+    }
