@@ -20,7 +20,6 @@
 // ヘッダー
 header {
   border-bottom: 2px solid #eee;
-
   width: 100%;
 }
 
@@ -43,16 +42,17 @@ footer {
 
 // スライドショーここから
 .a {
-  width: 60%;
+  width: 80%;
   margin: 20px auto;
   display: flex;
   justify-content: center;
 }
 
 .c {
-  height: 400px;
+  height: 500px;
   width: 100%;
 }
+// スライドショーここまで
 
 // ウェルカムメッセージここから
 .welcome-message {
@@ -80,8 +80,6 @@ footer {
   width: 100px;
   text-align: center;
 }
-
-// スライドショーここまで
 
 // 新規商品ここから
 .new-items {
