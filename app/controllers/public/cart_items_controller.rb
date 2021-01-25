@@ -34,13 +34,19 @@ class Public::CartItemsController < ApplicationController
        @now_cart_item.amount += @cart_item.amount
        @now_cart_item.update(amount: @now_cart_item.amount)
        redirect_to cart_items_path
+       #こっちはupdateに成功した場合のリダイレクト
      else
         if @cart_item.save
         redirect_to cart_items_path
+        #こっちはcreateに成功した場合のリダイレクト
         else
          flash[:alert] = "カートに入れる個数を入力してください"
          redirect_back(fallback_location: cart_items_path)
         end
+      #今回の場合は、三つの条件分岐を作る。
+      #１すでにカートに入っている状態の商品の数量がアップデートされた時
+      #２まだカートに商品が存在していない状態で新しくCreateされた時
+      #３個数選択してくださいのセレクトを選んでカートに入れるを押した時
      end
   end
 
