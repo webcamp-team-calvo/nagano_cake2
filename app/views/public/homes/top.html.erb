@@ -1,18 +1,28 @@
 <div class="jumbotron">
+      <div id="container">
+      <div id="theTarget">
+        <div class="image1"></div>
+        <div class="image2"></div>
+        <div class="image3"></div>
+        <div class="image4"></div>
+        <div class="image5"></div>
+      </div>
+    </div>
   <div class="container">
     <div class="row">
       <div class="welcome-message">
-        <p id="welcome-text">ようこそ、NaganoCakeへ!<br>
-        このサイトは、ケーキ販売のECサイトになります。<br>
-        会員でない方も商品の閲覧はできますが、<br>
-        購入には会員登録が必要になります。</p>
+        <p id="welcome-text">誰かと食べるケーキ。<br>
+        ひとりで食べるケーキ。<br>
+        どっちも幸せ。<br>
+        甘い幸せを、ながのcakeがお届けします。
+        </p>
       </div>
     </div>
   </div>
 </div>
 <div class="container">
   <div class="row">
-      <div class="pickup-item mt-5">
+      <div class="pickup-item mt-1">
         <h3 class="new_arrival">New</h3>
         <div>
           <% @active_items.each.with_index(1) do |item| %>
@@ -22,13 +32,13 @@
                 <%= attachment_image_tag item, :image, :fill, 200, 150, fallback: "noimage.jpg" %>
                 <% end %>
               </div>
-              <h4><%= item.name %></h4>
+              <div class="item_name"><%= item.name %></div>
               <p>¥<%= (item.price * 1.1).round %>(税込)</p>
             </div>
           <% end %>
         </div >
-        <div class="color: black;">
-        <%= link_to "全ての商品を見る", items_path %>
+        <div>
+        <%= link_to "View all", items_path, :style=>"color: #343a40;" %>
         </div>
       </div>
     </div>
