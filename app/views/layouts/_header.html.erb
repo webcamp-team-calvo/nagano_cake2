@@ -31,10 +31,10 @@
       <% elsif customer_signed_in? %>
         <nav>
           <ul class="navbar-nav">
-            <li><%= link_to ' My Page',customers_path,class: 'fas fa-house-user nav-link text-dark' %></li>
-            <li><%= link_to ' Cakes', items_path,class: 'fas fa-birthday-cake nav-link text-dark' %></li>
-            <li><%= link_to ' Cart',cart_items_path ,class: 'fas fa-cart-plus nav-link text-dark'%></li>
-            <li><%= link_to ' Logout', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-dark' %></li>
+            <li><%= link_to 'マイページ',customer_path(current_customer),class: 'fas fa-house-user nav-link text-light' %></li>
+            <li><%= link_to '商品一覧', items_path,class: 'fas fa-birthday-cake nav-link text-light' %></li>
+            <li><%= link_to 'カート',cart_items_path ,class: 'fas fa-cart-plus nav-link text-light'%></li>
+            <li><%= link_to 'ログアウト', destroy_customer_session_path, method: :delete,class: 'fas fa-sign-out-alt nav-link text-light' %></li>
           </ul>
         </nav>
       <% else %>

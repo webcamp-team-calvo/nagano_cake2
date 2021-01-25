@@ -2,7 +2,7 @@
   <div class='row mt-5'>
     <div class='col'>
      <h3 class="bg-light text-center" style="width:200px" >注文履歴一覧</h3>
-     
+
      <table class="table mt-5">
        <thead class="thead-light">
         <tr>
@@ -10,28 +10,6 @@
           <th>購入者</th>
           <th>注文個数</th>
           <th>ステータス</th>
-        <% if @customer_orders.empty? %>
-        </tr>
-       </thead>
-       <tbody>
-        <% @orders.each do |order| %>
-       <tr>
-         <td>
-           <%= link_to admin_order_path(order) do %>
-           <%= order.created_at.to_s(:datetime_jp) %>
-           <% end %>
-         </td>
-         <td><%= order.customer.last_name %> <%= order.customer.first_name %></td>
-         <% @sum = 0 %>
-         <td><% order.order_items.each do |order_item| %>
-             <% @sum += order_item.amount %>
-             <% end %>
-             <%= @sum %>
-         <td><%= order.status %></td>
-       </tr>
-       <% end %>
-       </tbody>
-       <% else %>
         </tr>
         <% @customer_orders.each do |order| %>
       <tr>
@@ -40,15 +18,14 @@
           <%= order.created_at.to_s(:datetime_jp) %>
           <% end %>
         </td>
-        <td><%= order.customer.last_name %> <%= order.customer.first_name %></td>
-        <% @sum = 0 %>
+        <td><%= order.customer.full_name %></td>
+          <% @sum = 0 %>
         <td><% order.order_items.each do |order_item| %>
             <% @sum += order_item.amount %>
             <% end %>
             <%= @sum %>
         <td><%= order.status %></td>
       </tr>
-       <% end %>
        <% end %>
      </table>
    </div>

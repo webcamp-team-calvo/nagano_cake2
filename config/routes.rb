@@ -23,9 +23,10 @@ Rails.application.routes.draw do
   end
 
   scope module: :public do
-    resource :customers, only: [:show, :edit, :update]
+    #resource :customers, only: [:show, :edit, :update]
     get '/customers/quit' => 'customers#quit'
     patch '/customers/out' => 'customers#out'
+    resources :customers, only: [:show, :edit, :update]
     resources :items, only: [:index, :show]
     delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
     resources :cart_items, only: [:index, :update, :create, :destroy, :show]
@@ -36,6 +37,6 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     get '/about' => 'homes#about'
   end
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

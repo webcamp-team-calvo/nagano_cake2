@@ -15,4 +15,12 @@ class Item < ApplicationRecord
     end
   end
 
+ with_options presence: true do
+    validates :image
+    #validates :category_id
+    validates :name, length: {maximum: 20, minimum: 1}
+    validates :information
+    validates :price, numericality: true
+  end
+
 end
