@@ -1,8 +1,25 @@
 <div class="container">
   <div class="a">
-    <div class="b"><img class="c" src="assets/cheese_cake.jpg"></div>
-    <div class="b"><img class="c" src="assets/chocola.jpg"></div>
-    <div class="b"><img class="c" src="assets/macaron.jpg"></div>
+    <div class="b"><img class="c" src="assets/cheese_cake.jpg">
+      <p class="slide-text">
+      誰かと食べるケーキ。<br>
+      ひとりで食べるケーキ。<br>
+      どっちも幸せ。<br>
+      甘い幸せを、ながのcakeがお届けします。</p>
+    </div>
+    <div class="b"><img class="c" src="assets/chocola.jpg">
+      <p class="slide-text">
+      誰かと食べるケーキ。<br>
+      ひとりで食べるケーキ。<br>
+      どっちも幸せ。<br>
+      甘い幸せを、ながのcakeがお届けします。</p>
+    </div>
+    <div class="b"><img class="c" src="assets/macaron.jpg">
+    <p class="slide-text">
+      誰かと食べるケーキ。<br>
+      ひとりで食べるケーキ。<br>
+      どっちも幸せ。<br>
+      甘い幸せを、ながのcakeがお届けします。</p></div>
   </div>
 
   <div class="row justify-content-center mb-5">
@@ -22,7 +39,7 @@
             <%= attachment_image_tag item, :image, :fill, 250, 175, fallback: "noimage.jpg" %>
           <% end %>
           <div class="hover-mask">
-            <%= link_to item_path(item), class:"itemlink" do %>
+            <%= link_to item_path(item), class:"item-link" do %>
             <p>
               <%= item.name %><br />
               ¥<%= (item.price * 1.1).round %>(税込)
