@@ -26,4 +26,14 @@ class Customer < ApplicationRecord
     last_name + first_name
   end
 
+  def self.search_for(content, method)
+    if method == 'forward'
+      Customer.where('last_name LIKE ? OR first_name LIKE ?', content + '%',content + '%')
+    elsif method == 'backward'
+      Customer.where('last_name LIKE ? OR first_name LIKE ?', '%' + content,'%' + content)
+    else
+      Customer.where('last_name LIKE ? OR first_name LIKE ?', '%' + content + '%','%' + content + '%')
+    end
+  end
+
 end
