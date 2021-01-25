@@ -17,7 +17,7 @@
           <tr>
             <td><%= customer.id %></td>
             <td>
-              <%= link_to admin_customer_path(customer) do %>
+              <%= link_to admin_customer_path(customer.id) do %>
                 <%= customer.full_name %>
               <% end %>
             </td>
