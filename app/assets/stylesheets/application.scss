@@ -16,3 +16,319 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+ @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap');
+
+
+body {
+  background: rgba(250, 236, 205, 0.1);
+  height: auto;
+  font-family: 'Lato','游ゴシック体','YuGothic','游ゴシック','Yu Gothic','sans-serif','sans-serif';
+}
+
+// ヘッダーここまで
+header {
+  border-bottom: 1px dashed #ffb300;
+  background: white;
+  width: 100%;
+  height: 120px;
+  // background: rgba(232, 228, 220, 0.5);
+  background: white;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  color: #222;
+}
+
+.header-bottom {
+  height: 120px;
+}
+
+.navbar-nav li {
+  margin-right: 3px;
+}
+
+.navbar-nav li:hover {
+  border-bottom: 1px dashed #ffb300;
+}
+
+// ロゴ
+.logo-img {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  border-radius: 50%;
+}
+ヘッダーここまで
+
+#title{
+  text-align: center;
+  font-size: 50px;
+  margin-top: 30px;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4)
+}
+
+// トップページここから
+  // スライドショーここから
+.a {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+}
+
+.c {
+  height: 550px;
+  width: 100%;
+}
+
+.b {
+  position: relative;
+}
+
+.slide-text {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 5px;
+  font-family: 'Crimson Text', serif;
+}
+// スライドショーここまで
+
+// ウェルカムメッセージここから
+.welcome-message {
+  width: 100%;
+  font-size: 20px;
+  margin: 20px auto 40px;
+}
+
+.welcome-message p {
+  width: 600px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed #ffb300;
+  color: #222;
+  font-family: 'Crimson Text', serif;
+}
+
+#welcome-text {
+  text-align: center;
+  // text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4)
+}
+// ウェルカムメッセージここまで
+
+
+// 新規商品ここから
+.new-items {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.new-item {
+  display: flex;
+  width: 270px;
+  height: 195px;
+  position: relative;
+}
+
+.new {
+  width: 50px;
+  height: 50px;
+  padding: 15px 0;
+  font-size: 13px;
+  text-align: center;
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+}
+
+.hover-parent {
+  width: 250px;
+  height: 175px;
+  position: relative;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.hover-mask {
+  width: 250px;
+  height: 175px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 5);
+  opacity: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  transition: all .6s ease;
+  padding-bottom: 0;
+
+  .item-link {
+    text-decoration: none;
+  }
+
+  p {
+    text-align: center;
+    color: white;
+  }
+}
+
+  // 新規商品画像ホバー時に商品名、値段を表示
+.hover-parent:hover .hover-mask {
+  padding-bottom: 30px;
+  opacity: .5;
+}
+  // 新規商品ここまで
+// トップページここまで
+
+// アバウトページ
+.about {
+  background-image: url(cooking.jpg);
+  background-size: cover;
+  position: relative;
+  background-position: right 50% bottom 20%;
+}
+
+.welcome-message_about {
+  width: 100%;
+  height: 300px;
+}
+
+#welcome-text_about {
+  width: 100%;
+  height: 100px;
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  left: 60px;
+  top: 160px;
+  letter-spacing: 5px;
+  font-family: 'Crimson Text', serif;
+}
+
+.chef_image {
+  width: 300px;
+  height: 300px;
+  background-image: url(chef.jpg);
+  background-size: cover;
+}
+
+.chef_introduction {
+  text-align: left;
+}
+
+.chef_name {
+  border-bottom: solid 2px #343a40;
+  text-align: center;
+}
+
+.fruits_image {
+  width: 300px;
+  height: 300px;
+  background-image: url(fruits.jpg);
+  background-size: cover;
+}
+
+.fruits_introduction {
+  text-align: left;
+}
+
+.fruits_head {
+  border-bottom: solid 2px #343a40;
+  text-align: center;
+}
+
+.access_image {
+  width: 300px;
+  height: 300px;
+  background-image: url(shop.jpg);
+  background-size: cover;
+  background-position: right 50% bottom 40%;
+}
+
+.access_introduction {
+  text-align: left;
+}
+
+.access_head {
+  border-bottom: solid 2px #343a40;
+  text-align: center;
+}
+
+.item-img-index {
+  transition: 1s all;
+}
+
+.item-img-index:hover {
+  transform: scale(1.2, 1.2);
+  transition: 1s all;
+}
+// アバウトページここまで
+
+// ページネーションのCSS
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #93c9ff;     /*背景の色を変える*/
+}
+
+// エラーメッセージ
+.alert{
+  color:#262626;
+  background:#FFEBE8;
+  text-align: center;
+  border:2px solid #990000;
+  padding:12px; font-weight:850;
+  }
+
+.notice {
+  color:#262626;
+  background:#ffebe800;
+  text-align: center;
+  border: 2px solid #2196F3;
+  padding:12px; font-weight:850;
+  }
+
+.error{
+  color:#262626;
+  background:#FFEBE8;
+  text-align: center;
+  border:2px solid #990000;
+  padding:12px; font-weight:850;
+  }
+
+.error li{
+  list-style:none;
+  }
+
+
+  // フッター
+footer {
+  width: 100%;
+  height: 150px;
+  background: rgba(232, 228, 220, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px dashed #ffb300;
+  margin-top: 50px;
+  }
