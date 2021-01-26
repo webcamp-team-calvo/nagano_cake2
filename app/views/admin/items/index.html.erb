@@ -1,14 +1,15 @@
-<div class="container">
-  
-<div style="position:absolute; top: 120px; right: 120px;">
-	 <%= link_to new_admin_item_path do %>
-		<div class="fas fa-plus-circle fa-3x"></div>
-	 <% end %>
-	 </div>
-	 
-  <div class='row mt-5'>
+<div class="container mt-5">
+ <div class="row justify-content-between">
+      <h4 class="text-center" style="width:150px" >商品一覧</h4>
+  <div style="position:absolute; top: 220px; right: 350px;">
+	   <%= link_to new_admin_item_path do %>
+		  <div class="fas fa-plus-circle fa-3x"></div>
+	   <% end %>
+	  </div>
+  </div>
+
+  <div class='row'>
     <div class='col'>
-      <h3 class="bg-light text-center" style="width:150px" >商品一覧</h3>
        <table class="table mt-5">
         <thead class="thead-light">
          <tr class="table-light">
