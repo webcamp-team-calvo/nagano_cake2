@@ -31,7 +31,8 @@ header {
   background: white;
   width: 100%;
   height: 120px;
-  background: rgba(232, 228, 220, 0.5);
+  // background: rgba(232, 228, 220, 0.5);
+  background: white;
   position: fixed;
   top: 0;
   z-index: 10;
@@ -49,7 +50,15 @@ header {
 .navbar-nav li:hover {
   border-bottom: 1px dashed #ffb300;
 }
-// ヘッダーここまで
+
+// ロゴ
+.logo-img {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  border-radius: 50%;
+}
+ヘッダーここまで
 
 #title{
   text-align: center;
@@ -58,7 +67,8 @@ header {
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4)
 }
 
-// スライドショーここから
+// トップページここから
+  // スライドショーここから
 .a {
   width: 90%;
   margin: 20px auto;
@@ -110,13 +120,6 @@ header {
 }
 // ウェルカムメッセージここまで
 
-// ロゴ
-.logo-img {
-  height: 100px;
-  width: 100px;
-  text-align: center;
-  border-radius: 50%;
-}
 
 // 新規商品ここから
 .new-items {
@@ -189,11 +192,12 @@ header {
   padding-bottom: 30px;
   opacity: .5;
 }
-// 新規商品ここまで
+  // 新規商品ここまで
+// トップページここまで
 
 // アバウトページ
 .about {
-  background-image: url;
+  background-image: url(cooking.jpg);
   background-size: cover;
   position: relative;
   background-position: right 50% bottom 20%;
@@ -204,31 +208,31 @@ header {
   height: 300px;
 }
 
-#ewlcome-text_about {
+#welcome-text_about {
   width: 100%;
   height: 100px;
   text-align: left;
   font-size: 20px;
   position: absolute;
-  left: 50px;
+  left: 100px;
   top: 160px;
   color: black;
   letter-spacing: 5px;
-  font-family: serif;
+  font-family: 'Crimson Text', serif;
 }
 
-.shef_image {
+.chef_image {
   width: 300px;
   height: 300px;
-  background-image: url();
+  background-image: url(chef.jpg);
   background-size: cover;
 }
 
-.shef_introduction {
+.chef_introduction {
   text-align: left;
 }
 
-.shef_name {
+.chef_name {
   border-bottom: solid 2px #343a40;
   text-align: center;
 }
@@ -236,7 +240,7 @@ header {
 .fruits_image {
   width: 300px;
   height: 300px;
-  background-image: url(fruits.jp);
+  background-image: url(fruits.jpg);
   background-size: cover;
 }
 
@@ -274,6 +278,7 @@ header {
   transform: scale(1.2, 1.2);
   transition: 1s all;
 }
+// アバウトページここまで
 
 // ページネーションのCSS
 .pagination>li>a {
@@ -288,40 +293,42 @@ header {
 
 // エラーメッセージ
 .alert{
-    color:#262626;
-    background:#FFEBE8;
-    text-align: center;
-    border:2px solid #990000;
-    padding:12px; font-weight:850;
-    }
-
-   .notice {
-    color:#262626;
-    background:#ffebe800;
-    text-align: center;
-    border: 2px solid #2196F3;
-    padding:12px; font-weight:850;
+  color:#262626;
+  background:#FFEBE8;
+  text-align: center;
+  border:2px solid #990000;
+  padding:12px; font-weight:850;
   }
-    .error{
-    color:#262626;
-    background:#FFEBE8;
-    text-align: center;
-    border:2px solid #990000;
-    padding:12px; font-weight:850;
-    }
 
-    .error li{
-    list-style:none;
+.notice {
+  color:#262626;
+  background:#ffebe800;
+  text-align: center;
+  border: 2px solid #2196F3;
+  padding:12px; font-weight:850;
   }
+
+.error{
+  color:#262626;
+  background:#FFEBE8;
+  text-align: center;
+  border:2px solid #990000;
+  padding:12px; font-weight:850;
+  }
+
+.error li{
+  list-style:none;
+  }
+
 
   // フッター
 footer {
   width: 100%;
   height: 150px;
-  background: rgba(232, 228, 220, 0.5);
+  background: rgba(232, 228, 220, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   border-top: 1px dashed #ffb300;
   margin-top: 50px;
-}
+  }
